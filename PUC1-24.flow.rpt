@@ -1,5 +1,5 @@
 Flow report for PUC1-24
-Thu Jun 20 14:55:54 2024
+Wed Jun 26 21:41:59 2024
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +------------------------------------+----------------------------------------------+
-; Flow Status                        ; Flow Failed - Thu Jun 20 14:55:54 2024       ;
+; Flow Status                        ; Flow Failed - Wed Jun 26 21:41:59 2024       ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; PUC1-24                                      ;
 ; Top-level Entity Name              ; PUC1-24                                      ;
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/20/2024 14:55:53 ;
+; Start date & time ; 06/26/2024 21:41:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PUC1-24             ;
 +-------------------+---------------------+
@@ -74,9 +74,13 @@ applicable agreement for further details.
 +------------------------------------+---------------------------------+---------------+-------------+----------------+
 ; Assignment Name                    ; Value                           ; Default Value ; Entity Name ; Section Id     ;
 +------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 180747813664844.171890615301060 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID              ; 229335795630731.171944891810040 ; --            ; --          ; --             ;
+; IP_TOOL_NAME                       ; ROM: 1-PORT                     ; --            ; --          ; --             ;
+; IP_TOOL_VERSION                    ; 9.1                             ; --            ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP             ; 85                              ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP             ; 0                               ; --            ; --          ; --             ;
+; MISC_FILE                          ; rom_2k_16.bsf                   ; --            ; --          ; --             ;
+; MISC_FILE                          ; rom_2k_16.cmp                   ; --            ; --          ; --             ;
 ; PARTITION_COLOR                    ; 16764057                        ; --            ; --          ; Top            ;
 ; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; --          ; Top            ;
 ; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --            ; --          ; eda_blast_fpga ;
@@ -88,8 +92,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 234 MB              ; 00:00:01                           ;
-; Total                ; 00:00:01     ; --                      ; --                  ; 00:00:01                           ;
+; Analysis & Synthesis ; 00:00:01     ; 1.0                     ; 232 MB              ; 00:00:02                           ;
+; Total                ; 00:00:01     ; --                      ; --                  ; 00:00:02                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -98,7 +102,7 @@ applicable agreement for further details.
 +----------------------+------------------+---------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name       ; OS Version ; Processor type ;
 +----------------------+------------------+---------------+------------+----------------+
-; Analysis & Synthesis ; andromeda        ; Windows Vista ; 6.2        ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-FIU66C0  ; Windows Vista ; 6.2        ; x86_64         ;
 +----------------------+------------------+---------------+------------+----------------+
 
 

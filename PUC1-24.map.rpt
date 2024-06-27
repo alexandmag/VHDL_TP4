@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PUC1-24
-Thu Jun 20 14:55:54 2024
+Wed Jun 26 21:41:59 2024
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Jun 20 14:55:54 2024            ;
+; Analysis & Synthesis Status        ; Failed - Wed Jun 26 21:41:59 2024            ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; PUC1-24                                      ;
 ; Top-level Entity Name              ; PUC1-24                                      ;
@@ -138,7 +138,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 4      ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -149,21 +149,21 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Jun 20 14:55:53 2024
+    Info: Processing started: Wed Jun 26 21:41:58 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PUC1-24 -c PUC1-24
-Info: Found 1 design units, including 1 entities, in source file /users/alexa/onedrive/documentos/puc minas/matérias/sistemas reconfiguráveis/tp 1/tp1_alu_20240420/tp1_alu/puc1-24.bdf
-    Info: Found entity 1: PUC1-24
-Error: Can't compile duplicate declarations of entity "PUC1-24" into library "work"
-    Error: Instance could be entity "PUC1-24" in file ../../TP 1/TP1_alu_20240420/TP1_alu/PUC1-24.bdf
-    Error: Instance could be entity "PUC1-24" in file PUC1-24.bdf
 Info: Found 1 design units, including 1 entities, in source file puc1-24.bdf
-Info: Found 2 design units, including 1 entities, in source file control_puc_241.vhd
-    Info: Found design unit 1: control_puc_241-arch
-    Info: Found entity 1: control_puc_241
-Error: Quartus II Analysis & Synthesis was unsuccessful. 3 errors, 0 warnings
-    Error: Peak virtual memory: 234 megabytes
-    Error: Processing ended: Thu Jun 20 14:55:54 2024
+    Info: Found entity 1: PUC1-24
+Warning: Can't analyze file -- file control_puc_241.vhd is missing
+Info: Found 2 design units, including 1 entities, in source file rom_2k_16.vhd
+    Info: Found design unit 1: rom_2k_16-SYN
+    Info: Found entity 1: rom_2k_16
+Info: Elaborating entity "PUC1-24" for the top level hierarchy
+Error: Port "IN" of type TRI of instance "inst5" is missing source signal
+Error: Can't elaborate top-level user hierarchy
+Error: Quartus II Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
+    Error: Peak virtual memory: 232 megabytes
+    Error: Processing ended: Wed Jun 26 21:41:59 2024
     Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+    Error: Total CPU time (on all processors): 00:00:02
 
 
