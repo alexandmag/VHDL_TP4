@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PUC1-24
-Wed Jun 26 21:41:59 2024
+Thu Jun 27 00:13:43 2024
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Jun 26 21:41:59 2024            ;
+; Analysis & Synthesis Status        ; Failed - Thu Jun 27 00:13:43 2024            ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; PUC1-24                                      ;
 ; Top-level Entity Name              ; PUC1-24                                      ;
@@ -149,7 +149,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Jun 26 21:41:58 2024
+    Info: Processing started: Thu Jun 27 00:13:41 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PUC1-24 -c PUC1-24
 Info: Found 1 design units, including 1 entities, in source file puc1-24.bdf
     Info: Found entity 1: PUC1-24
@@ -158,12 +158,81 @@ Info: Found 2 design units, including 1 entities, in source file rom_2k_16.vhd
     Info: Found design unit 1: rom_2k_16-SYN
     Info: Found entity 1: rom_2k_16
 Info: Elaborating entity "PUC1-24" for the top level hierarchy
-Error: Port "IN" of type TRI of instance "inst5" is missing source signal
-Error: Can't elaborate top-level user hierarchy
-Error: Quartus II Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 232 megabytes
-    Error: Processing ended: Wed Jun 26 21:41:59 2024
-    Error: Elapsed time: 00:00:01
+Warning: Using design file control_unit.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: control_unit-arch
+    Info: Found entity 1: control_unit
+Info: Elaborating entity "control_unit" for hierarchy "control_unit:inst3"
+Warning: Using design file reg_bank.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: reg_bank-arch1
+    Info: Found entity 1: reg_bank
+Info: Elaborating entity "reg_bank" for hierarchy "reg_bank:inst10"
+Warning: Using design file alu_3.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: alu_3-arch
+    Info: Found entity 1: alu_3
+Info: Elaborating entity "alu_3" for hierarchy "alu_3:inst"
+Info: Elaborating entity "BUSMUX" for hierarchy "BUSMUX:inst2"
+Info: Elaborated megafunction instantiation "BUSMUX:inst2"
+Info: Instantiated megafunction "BUSMUX:inst2" with the following parameter:
+    Info: Parameter "WIDTH" = "8"
+Info: Elaborating entity "lpm_mux" for hierarchy "BUSMUX:inst2|lpm_mux:$00000"
+Info: Elaborated megafunction instantiation "BUSMUX:inst2|lpm_mux:$00000", which is child of megafunction instantiation "BUSMUX:inst2"
+Info: Found 1 design units, including 1 entities, in source file db/mux_smc.tdf
+    Info: Found entity 1: mux_smc
+Info: Elaborating entity "mux_smc" for hierarchy "BUSMUX:inst2|lpm_mux:$00000|mux_smc:auto_generated"
+Info: Elaborating entity "rom_2k_16" for hierarchy "rom_2k_16:inst7"
+Info: Elaborating entity "altsyncram" for hierarchy "rom_2k_16:inst7|altsyncram:altsyncram_component"
+Info: Elaborated megafunction instantiation "rom_2k_16:inst7|altsyncram:altsyncram_component"
+Info: Instantiated megafunction "rom_2k_16:inst7|altsyncram:altsyncram_component" with the following parameter:
+    Info: Parameter "clock_enable_input_a" = "BYPASS"
+    Info: Parameter "clock_enable_output_a" = "BYPASS"
+    Info: Parameter "init_file" = "teste.mif"
+    Info: Parameter "intended_device_family" = "Cyclone II"
+    Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info: Parameter "lpm_type" = "altsyncram"
+    Info: Parameter "maximum_depth" = "2048"
+    Info: Parameter "numwords_a" = "2048"
+    Info: Parameter "operation_mode" = "ROM"
+    Info: Parameter "outdata_aclr_a" = "NONE"
+    Info: Parameter "outdata_reg_a" = "CLOCK0"
+    Info: Parameter "widthad_a" = "11"
+    Info: Parameter "width_a" = "16"
+    Info: Parameter "width_byteena_a" = "1"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_2q81.tdf
+    Info: Found entity 1: altsyncram_2q81
+Info: Elaborating entity "altsyncram_2q81" for hierarchy "rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_2q81:auto_generated"
+Warning: Using design file prog_cnt.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: prog_cnt-arch1
+    Info: Found entity 1: prog_cnt
+Info: Elaborating entity "prog_cnt" for hierarchy "prog_cnt:inst4"
+Warning: Using design file stack.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: Stack-Behavioral
+    Info: Found entity 1: Stack
+Info: Elaborating entity "Stack" for hierarchy "Stack:inst14"
+Warning: Using design file ram_256x8.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: ram_256x8-behavior
+    Info: Found entity 1: ram_256x8
+Info: Elaborating entity "ram_256x8" for hierarchy "ram_256x8:inst11"
+Warning: Using design file port_io.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: port_io-behavior
+    Info: Found entity 1: port_io
+Info: Elaborating entity "port_io" for hierarchy "port_io:inst12"
+Warning (10036): Verilog HDL or VHDL warning at port_io.vhd(23): object "latch" assigned a value but never read
+Warning (10631): VHDL Process Statement warning at port_io.vhd(51): inferring latch(es) for signal or variable "port_io", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "port_io[0]" at port_io.vhd(51)
+Info (10041): Inferred latch for "port_io[1]" at port_io.vhd(51)
+Info (10041): Inferred latch for "port_io[2]" at port_io.vhd(51)
+Info (10041): Inferred latch for "port_io[3]" at port_io.vhd(51)
+Info (10041): Inferred latch for "port_io[4]" at port_io.vhd(51)
+Info (10041): Inferred latch for "port_io[5]" at port_io.vhd(51)
+Info (10041): Inferred latch for "port_io[6]" at port_io.vhd(51)
+Info (10041): Inferred latch for "port_io[7]" at port_io.vhd(51)
+Info: Elaborating entity "port_io" for hierarchy "port_io:inst13"
+Error (10515): VHDL type mismatch error at port_io.vhd(7): integer type does not match string literal File: C:/Users/User/Documents/GitHub/VHDL_TP4/port_io.vhd Line: 7
+Error: Can't elaborate user hierarchy "port_io:inst13"
+Error: Quartus II Analysis & Synthesis was unsuccessful. 2 errors, 10 warnings
+    Error: Peak virtual memory: 244 megabytes
+    Error: Processing ended: Thu Jun 27 00:13:43 2024
+    Error: Elapsed time: 00:00:02
     Error: Total CPU time (on all processors): 00:00:02
 
 
