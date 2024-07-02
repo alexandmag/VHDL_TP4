@@ -3,6 +3,7 @@
 	<PROJECT NAME="PUC1-24">
 		<CBX_INST_ENTRY INSTANCE_NAME="|PUC1-24|BUSMUX:inst1|lpm_mux:$00000" CBX_FILE_NAME="mux_smc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|PUC1-24|BUSMUX:inst2|lpm_mux:$00000" CBX_FILE_NAME="mux_smc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|PUC1-24|alu_3:inst|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_rpi.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|PUC1-24|rom_2k_16:inst7|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_2q81.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

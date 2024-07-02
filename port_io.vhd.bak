@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity port_io is
     generic (
-        base_addr : integer := 0  -- Utilizamos o valor decimal 0
+        base_addr : integer := 16#00#  -- Utilizamos o valor decimal 0
     );
     port (
         clk_in     : in  std_logic;

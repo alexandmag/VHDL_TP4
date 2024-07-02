@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PUC1-24
-Thu Jun 27 00:13:43 2024
+Mon Jul 01 23:13:35 2024
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -10,7 +10,23 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |PUC1-24|control_unit:inst3|pres_state
+ 10. User-Specified and Inferred Latches
+ 11. General Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Source assignments for rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_2q81:auto_generated
+ 14. Parameter Settings for User Entity Instance: BUSMUX:inst2
+ 15. Parameter Settings for User Entity Instance: rom_2k_16:inst7|altsyncram:altsyncram_component
+ 16. Parameter Settings for User Entity Instance: BUSMUX:inst1
+ 17. Parameter Settings for User Entity Instance: port_io:inst12
+ 18. Parameter Settings for User Entity Instance: port_io:inst13
+ 19. Parameter Settings for Inferred Entity Instance: alu_3:inst|lpm_add_sub:Add0
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +52,20 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Jun 27 00:13:43 2024            ;
+; Analysis & Synthesis Status        ; Successful - Mon Jul 01 23:13:35 2024        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; PUC1-24                                      ;
 ; Top-level Entity Name              ; PUC1-24                                      ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; N/A until Partition Merge                    ;
-;     Total combinational functions  ; N/A until Partition Merge                    ;
-;     Dedicated logic registers      ; N/A until Partition Merge                    ;
-; Total registers                    ; N/A until Partition Merge                    ;
-; Total pins                         ; N/A until Partition Merge                    ;
-; Total virtual pins                 ; N/A until Partition Merge                    ;
-; Total memory bits                  ; N/A until Partition Merge                    ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                    ;
-; Total PLLs                         ; N/A until Partition Merge                    ;
+; Total logic elements               ; 4,209                                        ;
+;     Total combinational functions  ; 2,083                                        ;
+;     Dedicated logic registers      ; 2,246                                        ;
+; Total registers                    ; 2246                                         ;
+; Total pins                         ; 61                                           ;
+; Total virtual pins                 ; 0                                            ;
+; Total memory bits                  ; 32,768                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                            ;
+; Total PLLs                         ; 0                                            ;
 +------------------------------------+----------------------------------------------+
 
 
@@ -143,13 +159,337 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                       ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+
+; PUC1-24.bdf                      ; yes             ; User Block Diagram/Schematic File      ; C:/Users/User/Documents/GitHub/VHDL_TP4/PUC1-24.bdf                                ;
+; rom_2k_16.vhd                    ; yes             ; User Wizard-Generated File             ; C:/Users/User/Documents/GitHub/VHDL_TP4/rom_2k_16.vhd                              ;
+; control_unit.vhd                 ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/control_unit.vhd                           ;
+; reg_bank.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/reg_bank.vhd                               ;
+; alu_3.vhd                        ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/alu_3.vhd                                  ;
+; busmux.tdf                       ; yes             ; Megafunction                           ; c:/users/user/desktop/altera/91sp2/quartus/libraries/megafunctions/busmux.tdf      ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                           ; c:/users/user/desktop/altera/91sp2/quartus/libraries/megafunctions/lpm_mux.tdf     ;
+; db/mux_smc.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/User/Documents/GitHub/VHDL_TP4/db/mux_smc.tdf                             ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/users/user/desktop/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf  ;
+; db/altsyncram_2q81.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/User/Documents/GitHub/VHDL_TP4/db/altsyncram_2q81.tdf                     ;
+; teste.mif                        ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/User/Documents/GitHub/VHDL_TP4/teste.mif                                  ;
+; prog_cnt.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/prog_cnt.vhd                               ;
+; stack.vhd                        ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/stack.vhd                                  ;
+; ram_256x8.vhd                    ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/ram_256x8.vhd                              ;
+; port_io.vhd                      ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/port_io.vhd                                ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                           ; c:/users/user/desktop/altera/91sp2/quartus/libraries/megafunctions/lpm_add_sub.tdf ;
+; db/add_sub_rpi.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/Users/User/Documents/GitHub/VHDL_TP4/db/add_sub_rpi.tdf                         ;
++----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 4,209  ;
+;                                             ;        ;
+; Total combinational functions               ; 2083   ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 1616   ;
+;     -- 3 input functions                    ; 441    ;
+;     -- <=2 input functions                  ; 26     ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 2065   ;
+;     -- arithmetic mode                      ; 18     ;
+;                                             ;        ;
+; Total registers                             ; 2246   ;
+;     -- Dedicated logic registers            ; 2246   ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 61     ;
+; Total memory bits                           ; 32768  ;
+; Maximum fan-out node                        ; clk_50 ;
+; Maximum fan-out                             ; 2262   ;
+; Total fan-out                               ; 17066  ;
+; Average fan-out                             ; 3.87   ;
++---------------------------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                            ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
+; |PUC1-24                                  ; 2083 (29)         ; 2246 (0)     ; 32768       ; 0            ; 0       ; 0         ; 61   ; 0            ; |PUC1-24                                                                                ; work         ;
+;    |Stack:inst14|                         ; 89 (89)           ; 88 (88)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|Stack:inst14                                                                   ;              ;
+;    |alu_3:inst|                           ; 101 (83)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|alu_3:inst                                                                     ; work         ;
+;       |lpm_add_sub:Add0|                  ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|alu_3:inst|lpm_add_sub:Add0                                                    ;              ;
+;          |add_sub_rpi:auto_generated|     ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|alu_3:inst|lpm_add_sub:Add0|add_sub_rpi:auto_generated                         ;              ;
+;    |busmux:inst1|                         ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst1                                                                   ;              ;
+;       |lpm_mux:$00000|                    ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst1|lpm_mux:$00000                                                    ;              ;
+;          |mux_smc:auto_generated|         ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst1|lpm_mux:$00000|mux_smc:auto_generated                             ;              ;
+;    |busmux:inst2|                         ; 41 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst2                                                                   ; work         ;
+;       |lpm_mux:$00000|                    ; 41 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst2|lpm_mux:$00000                                                    ; work         ;
+;          |mux_smc:auto_generated|         ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst2|lpm_mux:$00000|mux_smc:auto_generated                             ; work         ;
+;    |control_unit:inst3|                   ; 41 (41)           ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|control_unit:inst3                                                             ;              ;
+;    |port_io:inst12|                       ; 20 (20)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|port_io:inst12                                                                 ;              ;
+;    |port_io:inst13|                       ; 23 (23)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|port_io:inst13                                                                 ;              ;
+;    |prog_cnt:inst4|                       ; 22 (22)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|prog_cnt:inst4                                                                 ; work         ;
+;    |ram_256x8:inst11|                     ; 1648 (1648)       ; 2048 (2048)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|ram_256x8:inst11                                                               ;              ;
+;    |reg_bank:inst10|                      ; 61 (61)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|reg_bank:inst10                                                                ; work         ;
+;    |rom_2k_16:inst7|                      ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|rom_2k_16:inst7                                                                ; work         ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|rom_2k_16:inst7|altsyncram:altsyncram_component                                ; work         ;
+;          |altsyncram_2q81:auto_generated| ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_2q81:auto_generated ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                        ;
++-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+-----------+
+; Name                                                                                      ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF       ;
++-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+-----------+
+; rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_2q81:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 2048         ; 16           ; --           ; --           ; 32768 ; teste.mif ;
++-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+-----------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |PUC1-24|control_unit:inst3|pres_state                                     ;
++-------------------------+-------------------------+-----------------------+----------------+
+; Name                    ; pres_state.fetch_dec_ex ; pres_state.fetch_only ; pres_state.rst ;
++-------------------------+-------------------------+-----------------------+----------------+
+; pres_state.rst          ; 0                       ; 0                     ; 0              ;
+; pres_state.fetch_only   ; 0                       ; 1                     ; 1              ;
+; pres_state.fetch_dec_ex ; 1                       ; 0                     ; 1              ;
++-------------------------+-------------------------+-----------------------+----------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                      ;
++-----------------------------------------------------+---------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal       ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------------+------------------------+
+; port_io:inst12|port_io[7]$latch                     ; port_io:inst12|dir_reg[7] ; yes                    ;
+; port_io:inst12|port_io[6]$latch                     ; port_io:inst12|dir_reg[6] ; yes                    ;
+; port_io:inst12|port_io[5]$latch                     ; port_io:inst12|dir_reg[5] ; yes                    ;
+; port_io:inst12|port_io[4]$latch                     ; port_io:inst12|dir_reg[4] ; yes                    ;
+; port_io:inst12|port_io[3]$latch                     ; port_io:inst12|dir_reg[3] ; yes                    ;
+; port_io:inst12|port_io[2]$latch                     ; port_io:inst12|dir_reg[2] ; yes                    ;
+; port_io:inst12|port_io[1]$latch                     ; port_io:inst12|dir_reg[1] ; yes                    ;
+; port_io:inst12|port_io[0]$latch                     ; port_io:inst12|dir_reg[0] ; yes                    ;
+; port_io:inst13|port_io[7]$latch                     ; port_io:inst13|dir_reg[7] ; yes                    ;
+; port_io:inst13|port_io[6]$latch                     ; port_io:inst13|dir_reg[6] ; yes                    ;
+; port_io:inst13|port_io[5]$latch                     ; port_io:inst13|dir_reg[5] ; yes                    ;
+; port_io:inst13|port_io[4]$latch                     ; port_io:inst13|dir_reg[4] ; yes                    ;
+; port_io:inst13|port_io[3]$latch                     ; port_io:inst13|dir_reg[3] ; yes                    ;
+; port_io:inst13|port_io[2]$latch                     ; port_io:inst13|dir_reg[2] ; yes                    ;
+; port_io:inst13|port_io[1]$latch                     ; port_io:inst13|dir_reg[1] ; yes                    ;
+; port_io:inst13|port_io[0]$latch                     ; port_io:inst13|dir_reg[0] ; yes                    ;
+; Number of user-specified and inferred latches = 16  ;                           ;                        ;
++-----------------------------------------------------+---------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 2246  ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 2246  ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 2231  ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+; 3:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |PUC1-24|Stack:inst14|stack[7][10]                                         ;
+; 3:1                ; 77 bits   ; 154 LEs       ; 77 LEs               ; 77 LEs                 ; Yes        ; |PUC1-24|Stack:inst14|stack[3][3]                                          ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |PUC1-24|prog_cnt:inst4|Mux6                                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |PUC1-24|control_unit:inst3|stack_pop                                      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |PUC1-24|control_unit:inst3|outp                                           ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |PUC1-24|control_unit:inst3|Mux25                                          ;
+; 8:1                ; 6 bits    ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |PUC1-24|reg_bank:inst10|Mux3                                              ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |PUC1-24|control_unit:inst3|alu_op[3]                                      ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |PUC1-24|busmux:inst2|lpm_mux:$00000|mux_smc:auto_generated|result_node[6] ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |PUC1-24|reg_bank:inst10|Mux7                                              ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |PUC1-24|control_unit:inst3|alu_op[1]                                      ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |PUC1-24|alu_3:inst|Mux3                                                   ;
+; 256:1              ; 8 bits    ; 1360 LEs      ; 1360 LEs             ; 0 LEs                  ; No         ; |PUC1-24|ram_256x8:inst11|Mux0                                             ;
+; 1:1                ; 8 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |PUC1-24|alu_3:inst|Add1                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Source assignments for rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_2q81:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------+
+; Assignment                      ; Value              ; From ; To                                      ;
++---------------------------------+--------------------+------+-----------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                       ;
++---------------------------------+--------------------+------+-----------------------------------------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst2 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 8     ; Untyped                          ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rom_2k_16:inst7|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------------+
+; Parameter Name                     ; Value                ; Type                             ;
++------------------------------------+----------------------+----------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                          ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                   ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                          ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                          ;
+; WIDTH_A                            ; 16                   ; Signed Integer                   ;
+; WIDTHAD_A                          ; 11                   ; Signed Integer                   ;
+; NUMWORDS_A                         ; 2048                 ; Signed Integer                   ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                          ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                          ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                          ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                          ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                          ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                          ;
+; WIDTH_B                            ; 1                    ; Untyped                          ;
+; WIDTHAD_B                          ; 1                    ; Untyped                          ;
+; NUMWORDS_B                         ; 1                    ; Untyped                          ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                          ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                          ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                          ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                          ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                          ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                          ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                          ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                          ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                          ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                          ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                          ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                          ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                   ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                          ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                          ;
+; BYTE_SIZE                          ; 8                    ; Untyped                          ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                          ;
+; INIT_FILE                          ; teste.mif            ; Untyped                          ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                          ;
+; MAXIMUM_DEPTH                      ; 2048                 ; Signed Integer                   ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                          ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                          ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                          ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                          ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                          ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                          ;
+; CBXI_PARAMETER                     ; altsyncram_2q81      ; Untyped                          ;
++------------------------------------+----------------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BUSMUX:inst1 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; WIDTH          ; 8     ; Untyped                          ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: port_io:inst12 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; base_addr      ; 00    ; Unsigned Hexadecimal               ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: port_io:inst13 ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; base_addr      ; 02    ; Unsigned Hexadecimal               ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: alu_3:inst|lpm_add_sub:Add0 ;
++------------------------+-------------+---------------------------------------+
+; Parameter Name         ; Value       ; Type                                  ;
++------------------------+-------------+---------------------------------------+
+; LPM_WIDTH              ; 9           ; Untyped                               ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                               ;
+; LPM_DIRECTION          ; DEFAULT     ; Untyped                               ;
+; ONE_INPUT_IS_CONSTANT  ; NO          ; Untyped                               ;
+; LPM_PIPELINE           ; 0           ; Untyped                               ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                               ;
+; REGISTERED_AT_END      ; 0           ; Untyped                               ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                               ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                               ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                               ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                    ;
+; DEVICE_FAMILY          ; Cyclone II  ; Untyped                               ;
+; USE_WYS                ; OFF         ; Untyped                               ;
+; STYLE                  ; FAST        ; Untyped                               ;
+; CBXI_PARAMETER         ; add_sub_rpi ; Untyped                               ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                            ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                          ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                          ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                        ;
++------------------------+-------------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                            ;
++-------------------------------------------+-------------------------------------------------+
+; Name                                      ; Value                                           ;
++-------------------------------------------+-------------------------------------------------+
+; Number of entity instances                ; 1                                               ;
+; Entity Instance                           ; rom_2k_16:inst7|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                             ;
+;     -- WIDTH_A                            ; 16                                              ;
+;     -- NUMWORDS_A                         ; 2048                                            ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                          ;
+;     -- WIDTH_B                            ; 1                                               ;
+;     -- NUMWORDS_B                         ; 1                                               ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                          ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                    ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                            ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                       ;
++-------------------------------------------+-------------------------------------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Jun 27 00:13:41 2024
+    Info: Processing started: Mon Jul 01 23:13:27 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PUC1-24 -c PUC1-24
 Info: Found 1 design units, including 1 entities, in source file puc1-24.bdf
     Info: Found entity 1: PUC1-24
@@ -216,23 +556,90 @@ Warning: Using design file port_io.vhd, which is not specified as a design file 
     Info: Found design unit 1: port_io-behavior
     Info: Found entity 1: port_io
 Info: Elaborating entity "port_io" for hierarchy "port_io:inst12"
-Warning (10036): Verilog HDL or VHDL warning at port_io.vhd(23): object "latch" assigned a value but never read
-Warning (10631): VHDL Process Statement warning at port_io.vhd(51): inferring latch(es) for signal or variable "port_io", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "port_io[0]" at port_io.vhd(51)
-Info (10041): Inferred latch for "port_io[1]" at port_io.vhd(51)
-Info (10041): Inferred latch for "port_io[2]" at port_io.vhd(51)
-Info (10041): Inferred latch for "port_io[3]" at port_io.vhd(51)
-Info (10041): Inferred latch for "port_io[4]" at port_io.vhd(51)
-Info (10041): Inferred latch for "port_io[5]" at port_io.vhd(51)
-Info (10041): Inferred latch for "port_io[6]" at port_io.vhd(51)
-Info (10041): Inferred latch for "port_io[7]" at port_io.vhd(51)
+Warning (10036): Verilog HDL or VHDL warning at port_io.vhd(29): object "latch" assigned a value but never read
+Warning (10631): VHDL Process Statement warning at port_io.vhd(56): inferring latch(es) for signal or variable "port_io", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "port_io[0]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[1]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[2]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[3]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[4]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[5]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[6]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[7]" at port_io.vhd(56)
 Info: Elaborating entity "port_io" for hierarchy "port_io:inst13"
-Error (10515): VHDL type mismatch error at port_io.vhd(7): integer type does not match string literal File: C:/Users/User/Documents/GitHub/VHDL_TP4/port_io.vhd Line: 7
-Error: Can't elaborate user hierarchy "port_io:inst13"
-Error: Quartus II Analysis & Synthesis was unsuccessful. 2 errors, 10 warnings
-    Error: Peak virtual memory: 244 megabytes
-    Error: Processing ended: Thu Jun 27 00:13:43 2024
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:02
+Warning (10036): Verilog HDL or VHDL warning at port_io.vhd(29): object "latch" assigned a value but never read
+Warning (10631): VHDL Process Statement warning at port_io.vhd(56): inferring latch(es) for signal or variable "port_io", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "port_io[0]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[1]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[2]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[3]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[4]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[5]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[6]" at port_io.vhd(56)
+Info (10041): Inferred latch for "port_io[7]" at port_io.vhd(56)
+Info: Inferred 1 megafunctions from design logic
+    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "alu_3:inst|Add0"
+Info: Elaborated megafunction instantiation "alu_3:inst|lpm_add_sub:Add0"
+Info: Instantiated megafunction "alu_3:inst|lpm_add_sub:Add0" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "9"
+    Info: Parameter "LPM_DIRECTION" = "DEFAULT"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "ONE_INPUT_IS_CONSTANT" = "NO"
+Info: Found 1 design units, including 1 entities, in source file db/add_sub_rpi.tdf
+    Info: Found entity 1: add_sub_rpi
+Warning: The following nodes have both tri-state and non-tri-state drivers
+    Warning: Inserted always-enabled tri-state buffer between "led[7]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "led[6]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "led[5]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "led[4]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "led[3]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "led[2]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "led[1]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "led[0]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "sw[7]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "sw[6]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "sw[5]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "sw[4]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "sw[3]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "sw[2]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "sw[1]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "sw[0]" and its non-tri-state driver.
+Warning: Tri-state node(s) do not directly drive top-level pin(s)
+    Warning: Converted the fan-out from the tri-state buffer "inst6[7]" to the node "busmux:inst1|lpm_mux:$00000|mux_smc:auto_generated|result_node[7]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "inst6[6]" to the node "busmux:inst1|lpm_mux:$00000|mux_smc:auto_generated|result_node[6]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "inst6[5]" to the node "busmux:inst1|lpm_mux:$00000|mux_smc:auto_generated|result_node[5]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "inst6[4]" to the node "busmux:inst1|lpm_mux:$00000|mux_smc:auto_generated|result_node[4]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "inst6[3]" to the node "busmux:inst1|lpm_mux:$00000|mux_smc:auto_generated|result_node[3]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "inst6[2]" to the node "busmux:inst1|lpm_mux:$00000|mux_smc:auto_generated|result_node[2]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "inst6[1]" to the node "busmux:inst1|lpm_mux:$00000|mux_smc:auto_generated|result_node[1]" into an OR gate
+    Warning: Converted the fan-out from the tri-state buffer "inst6[0]" to the node "busmux:inst1|lpm_mux:$00000|mux_smc:auto_generated|result_node[0]" into an OR gate
+Warning: TRI or OPNDRN buffers permanently enabled
+    Warning: Node "led~synth"
+    Warning: Node "led~synth"
+    Warning: Node "led~synth"
+    Warning: Node "led~synth"
+    Warning: Node "led~synth"
+    Warning: Node "led~synth"
+    Warning: Node "led~synth"
+    Warning: Node "led~synth"
+    Warning: Node "sw~synth"
+    Warning: Node "sw~synth"
+    Warning: Node "sw~synth"
+    Warning: Node "sw~synth"
+    Warning: Node "sw~synth"
+    Warning: Node "sw~synth"
+    Warning: Node "sw~synth"
+    Warning: Node "sw~synth"
+Info: Implemented 4313 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 43 output pins
+    Info: Implemented 16 bidirectional pins
+    Info: Implemented 4236 logic cells
+    Info: Implemented 16 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 55 warnings
+    Info: Peak virtual memory: 261 megabytes
+    Info: Processing ended: Mon Jul 01 23:13:35 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:10
 
 
