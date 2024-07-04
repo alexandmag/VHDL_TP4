@@ -58,7 +58,49 @@ ARCHITECTURE arch OF control_unit IS
     CONSTANT ALU_OP_SRL  : STD_LOGIC_VECTOR(3 DOWNTO 0) := "1101";
     CONSTANT ALU_OP_SRA  : STD_LOGIC_VECTOR(3 DOWNTO 0) := "1110";
     CONSTANT ALU_OP_PASS_B : STD_LOGIC_VECTOR(3 DOWNTO 0) := "1111";
-
+    
+    -- Instruções ALU e dois registradores (Reg-Reg)
+    CONSTANT OP_AND  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "000";
+    CONSTANT OP_OR   : STD_LOGIC_VECTOR (2 DOWNTO 0) := "001";
+    CONSTANT OP_XOR  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "010";
+    CONSTANT OP_MOV  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "011";
+    CONSTANT OP_ADD  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "100";
+    CONSTANT OP_ADDC : STD_LOGIC_VECTOR (2 DOWNTO 0) := "101";
+    CONSTANT OP_SUB  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "110";
+    CONSTANT OP_SUBC : STD_LOGIC_VECTOR (2 DOWNTO 0) := "111";
+    
+    -- Instruções ALU e um valor imediato (Reg-Immed)
+    CONSTANT OP_ANDI  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "000";
+    CONSTANT OP_ORI   : STD_LOGIC_VECTOR (2 DOWNTO 0) := "001";    
+    CONSTANT OP_XORI  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "010";
+    CONSTANT OP_MOVI  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "011";
+    CONSTANT OP_ADDI  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "100";
+    CONSTANT OP_ADDIC : STD_LOGIC_VECTOR (2 DOWNTO 0) := "101";
+    CONSTANT OP_SUBI  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "110";
+    CONSTANT OP_SUBIC : STD_LOGIC_VECTOR (2 DOWNTO 0) := "111";
+    
+    -- Instruções ALU e um registrador
+    CONSTANT OP_RL   : STD_LOGIC_VECTOR (2 DOWNTO 0) := "000";
+    CONSTANT OP_RR   : STD_LOGIC_VECTOR (2 DOWNTO 0) := "001";
+    CONSTANT OP_RLC  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "010";
+    CONSTANT OP_RRC  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "011";
+    CONSTANT OP_SLL  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "100";
+    CONSTANT OP_SRL  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "101";
+    CONSTANT OP_SRA  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "110";
+    CONSTANT OP_CMP  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "111";
+    
+    -- Instruções de memória e E/S
+    CONSTANT OP_LDM : STD_LOGIC_VECTOR (1 DOWNTO 0) := "00";
+    CONSTANT OP_STM : STD_LOGIC_VECTOR (1 DOWNTO 0) := "01";
+    CONSTANT OP_INP : STD_LOGIC_VECTOR (1 DOWNTO 0) := "10";
+    CONSTANT OP_OUT : STD_LOGIC_VECTOR (1 DOWNTO 0) := "11";    
+    
+    -- Instruções de desvio
+    CONSTANT OP_BC : STD_LOGIC_VECTOR (1 DOWNTO 0) := "00";
+    CONSTANT OP_BZ : STD_LOGIC_VECTOR (1 DOWNTO 0) := "01";
+    CONSTANT OP_JMP : STD_LOGIC_VECTOR (1 DOWNTO 0) := "10";
+    CONSTANT OP_NOP : STD_LOGIC_VECTOR (4 DOWNTO 0) := "11111";
+    
 BEGIN
 
     -- Processo sequencial para a FSM
@@ -90,146 +132,210 @@ BEGIN
         mem_rd_ena <= '0';
         inp <= '0';
         outp <= '0';
-
+		next_state <= pres_state; -- Manter o estado atual por padrão
+		 
         CASE pres_state IS
             WHEN rst =>
                 next_state <= fetch_only;
 
             WHEN fetch_only =>
                 next_state <= fetch_dec_ex;
-                mem_rd_ena <= '1'; -- Ler memória para obter a instrução
-                pc_ctrl <= "01"; -- Incrementar o PC
+                pc_ctrl <= "11"; -- Incrementar o PC
             
             WHEN fetch_dec_ex =>
-                next_state <= fetch_dec_ex;
-                
-                CASE opcode(15 DOWNTO 13) IS
+                CASE opcode(15 DOWNTO 14) IS
                     -- Instruções ALU e dois registradores (Reg-Reg)
-                    WHEN "000" =>
-                        alu_b_in_sel <= '0';
-                        wr_reg_ena <= '1';
-                        
-                        CASE opcode(12 DOWNTO 10) IS
-                            WHEN "000" => alu_op <= ALU_OP_AND;
-                            WHEN "001" => alu_op <= ALU_OP_OR;
-                            WHEN "010" => alu_op <= ALU_OP_XOR;
-                            WHEN "011" => alu_op <= ALU_OP_PASS_B;
-                            WHEN "100" => alu_op <= ALU_OP_ADD; flag_c_wr_ena <= '1'; flag_z_wr_ena <= '1'; flag_v_wr_ena <= '1';
-                            WHEN "101" => alu_op <= ALU_OP_ADDC; flag_c_wr_ena <= '1'; flag_z_wr_ena <= '1'; flag_v_wr_ena <= '1';
-                            WHEN "110" => alu_op <= ALU_OP_SUB; flag_c_wr_ena <= '1'; flag_z_wr_ena <= '1'; flag_v_wr_ena <= '1';
-                            WHEN "111" => alu_op <= ALU_OP_SUBC; flag_c_wr_ena <= '1'; flag_z_wr_ena <= '1'; flag_v_wr_ena <= '1';
-                            WHEN OTHERS => null;
-                        END CASE;
+                    WHEN "00" =>
+						wr_reg_ena <= '1';
+						stack_push  <= '1';
+						alu_b_in_sel <= '1';
+						
+                        CASE opcode(13 DOWNTO 11) IS
+                            WHEN OP_AND =>
+                               
+                                alu_op <= ALU_OP_AND;
+                                
+                            WHEN OP_OR =>
+                              
+                                alu_op <= ALU_OP_OR;
 
+                            WHEN OP_XOR =>
+                                alu_op <= ALU_OP_XOR;
+
+                            WHEN OP_MOV =>
+                                alu_op <= ALU_OP_PASS_B;
+
+                            WHEN OP_ADD =>
+                                flag_c_wr_ena <= '1';
+                                flag_z_wr_ena <= '1';
+                                alu_op <= ALU_OP_ADD;
+                                
+                            WHEN OP_ADDC =>
+                                flag_c_wr_ena <= '1';
+                                flag_z_wr_ena <= '1';
+                                alu_op <= ALU_OP_ADDC;
+                                
+                            WHEN OP_SUB =>
+                                flag_c_wr_ena <= '1';
+                                flag_z_wr_ena <= '1';
+                                alu_op <= ALU_OP_SUB;
+
+                            WHEN OP_SUBC =>
+                                flag_c_wr_ena <= '1';
+                                flag_z_wr_ena <= '1';
+                                alu_op <= ALU_OP_SUBC;
+                        END CASE;
+                        next_state <= fetch_only;
+                
                     -- Instruções ALU e um valor imediato (Reg-Immed)
-                    WHEN "001" =>
+                    WHEN "01" =>
+                        reg_di_sel <= '1';
                         alu_b_in_sel <= '1';
                         wr_reg_ena <= '1';
                         
-                        CASE opcode(12 DOWNTO 10) IS
-                            WHEN "000" => alu_op <= ALU_OP_AND;
-                            WHEN "001" => alu_op <= ALU_OP_OR;
-                            WHEN "010" => alu_op <= ALU_OP_XOR;
-                            WHEN "011" => alu_op <= ALU_OP_PASS_B;
-                            WHEN "100" => alu_op <= ALU_OP_ADD; flag_c_wr_ena <= '1'; flag_z_wr_ena <= '1'; flag_v_wr_ena <= '1';
-                            WHEN "101" => alu_op <= ALU_OP_ADDC; flag_c_wr_ena <= '1'; flag_z_wr_ena <= '1'; flag_v_wr_ena <= '1';
-                            WHEN "110" => alu_op <= ALU_OP_SUB; flag_c_wr_ena <= '1'; flag_z_wr_ena <= '1'; flag_v_wr_ena <= '1';
-                            WHEN "111" => alu_op <= ALU_OP_SUBC; flag_c_wr_ena <= '1'; flag_z_wr_ena <= '1'; flag_v_wr_ena <= '1';
-                            WHEN OTHERS => null;
+                        CASE opcode(13 DOWNTO 11) IS
+                            WHEN OP_ANDI =>
+                                alu_op <= ALU_OP_AND;
+                                
+                            WHEN OP_ORI =>
+                                alu_op <= ALU_OP_OR;
+                                
+                            WHEN OP_XORI =>
+                                alu_op <= ALU_OP_XOR;
+                                
+                            WHEN OP_MOVI =>
+                                alu_op <= ALU_OP_PASS_B;
+                                
+                            WHEN OP_ADDI =>
+                                alu_op <= ALU_OP_ADD;
+                                flag_c_wr_ena <= '1';
+                                flag_z_wr_ena <= '1';
+                                
+                            WHEN OP_ADDIC =>
+                                alu_op <= ALU_OP_ADDC;
+                                flag_c_wr_ena <= '1';
+                                flag_z_wr_ena <= '1';
+                                
+                            WHEN OP_SUBI =>
+                                alu_op <= ALU_OP_SUB;
+                                flag_c_wr_ena <= '1';
+                                flag_z_wr_ena <= '1';
+                                
+                            WHEN OP_SUBIC =>
+                                alu_op <= ALU_OP_SUBC;
+                                flag_c_wr_ena <= '1';
+                                flag_z_wr_ena <= '1';
                         END CASE;
-
-                    -- Instruções de rotação e deslocamento
-                    WHEN "010" =>
-                        alu_b_in_sel <= '0';
-                        wr_reg_ena <= '1';
-                        
-                        CASE opcode(12 DOWNTO 10) IS
-                            WHEN "000" => alu_op <= ALU_OP_RL;
-                            WHEN "001" => alu_op <= ALU_OP_RR;
-                            WHEN "010" => alu_op <= ALU_OP_RLC; flag_c_wr_ena <= '1';
-                            WHEN "011" => alu_op <= ALU_OP_RRC; flag_c_wr_ena <= '1';
-                                                       WHEN "100" => alu_op <= ALU_OP_SLL;
-                            WHEN "101" => alu_op <= ALU_OP_SRL;
-                            WHEN "110" => alu_op <= ALU_OP_SRA;
-                            WHEN OTHERS => null;
-                        END CASE;
-
-                    -- Instruções de controle de fluxo
-                    WHEN "011" =>
-                        CASE opcode(12 DOWNTO 9) IS
-                            WHEN "0000" => -- Instrução NOP
-                                next_state <= fetch_dec_ex;
-                            WHEN "0001" => -- Instrução HALT
-                                next_state <= pres_state; -- Manter o estado atual
-                            WHEN "0010" => -- Instrução JUMP
-                                pc_ctrl <= "10"; -- Atualizar o PC com o endereço de destino
-                                next_state <= fetch_only;
-                            WHEN "0011" => -- Instrução CALL
-                                stack_push <= '1';
-                                pc_ctrl <= "10"; -- Atualizar o PC com o endereço de destino
-                                next_state <= fetch_only;
-                            WHEN "0100" => -- Instrução RET
-                                stack_pop <= '1';
-                                next_state <= fetch_only;
-                            WHEN "0101" => -- Instrução BEQ (Branch if Equal)
-                                IF z_flag = '1' THEN
-                                    pc_ctrl <= "10"; -- Atualizar o PC com o endereço de destino
-                                END IF;
-                                next_state <= fetch_only;
-                            WHEN "0110" => -- Instrução BNE (Branch if Not Equal)
-                                IF z_flag = '0' THEN
-                                    pc_ctrl <= "10"; -- Atualizar o PC com o endereço de destino
-                                END IF;
-                                next_state <= fetch_only;
-                            WHEN "0111" => -- Instrução BC (Branch if Carry)
-                                IF c_flag = '1' THEN
-                                    pc_ctrl <= "10"; -- Atualizar o PC com o endereço de destino
-                                END IF;
-                                next_state <= fetch_only;
-                            WHEN "1000" => -- Instrução BNC (Branch if Not Carry)
-                                IF c_flag = '0' THEN
-                                    pc_ctrl <= "10"; -- Atualizar o PC com o endereço de destino
-                                END IF;
-                                next_state <= fetch_only;
-                            WHEN OTHERS =>
-                                null;
-                        END CASE;
-
-                    -- Instruções de memória
-                    WHEN "100" =>
-                        CASE opcode(12 DOWNTO 10) IS
-                            WHEN "000" => -- Instrução LOAD
-                                mem_rd_ena <= '1';
-                                reg_di_sel <= '1';
-                                wr_reg_ena <= '1';
-                                next_state <= fetch_only;
-                            WHEN "001" => -- Instrução STORE
-                                mem_wr_ena <= '1';
-                                reg_do_a_on_dext <= '1';
-                                next_state <= fetch_only;
-                            WHEN OTHERS =>
-                                null;
-                        END CASE;
-
-                    -- Instruções de I/O
-                    WHEN "101" =>
-                        CASE opcode(12 DOWNTO 10) IS
-                            WHEN "000" => -- Instrução IN
-                                inp <= '1';
-                                wr_reg_ena <= '1';
-                                next_state <= fetch_only;
-                            WHEN "001" => -- Instrução OUT
-                                outp <= '1';
-                                next_state <= fetch_only;
-                            WHEN OTHERS =>
-                                null;
-                        END CASE;
-
-                    WHEN OTHERS =>
                         next_state <= fetch_only;
-                END CASE;
+
+                    -- Instruções ALU e um registrador
+                    WHEN "10" =>
+                    
+						alu_b_in_sel  <= '1';
+						wr_reg_ena <= '1';
+						stack_push   <= '1';
+						
+                        CASE opcode(13 DOWNTO 11) IS
+                            WHEN OP_RL =>
+                                alu_op <= ALU_OP_RL;
+                                
+                            WHEN OP_RR =>
+                                alu_op <= ALU_OP_RR;
+                                
+                            WHEN OP_RLC =>
+                            
+                                alu_op <= ALU_OP_RLC;
+                                flag_c_wr_ena <= '1';
+                                
+                            WHEN OP_RRC =>
+                                alu_op <= ALU_OP_RRC;
+                                flag_c_wr_ena <= '1';
+                                
+                            WHEN OP_SLL =>
+                            
+                                alu_op <= ALU_OP_SLL;
+                                
+                            WHEN OP_SRL =>
+                            
+                                alu_op <= ALU_OP_SRL;
+                                
+                            WHEN OP_SRA =>
+                                alu_op <= ALU_OP_SRA;
+                                
+                            WHEN OP_CMP =>
+                                alu_op <= ALU_OP_SUB;
+                                
+                        END CASE;
+                        next_state <= fetch_only;
+
+                    -- Instruções de memória e E/S
+                    WHEN "11" =>
+						IF opcode(13) = '0' THEN
+							
+                        IF opcode(12 DOWNTO 11) = OP_LDM THEN
+							--OP_LDM				
+								next_state <= fetch_dec_ex;
+								reg_di_sel <= '1';
+								mem_rd_ena <= '1';
+								wr_reg_ena <= '1';
+								stack_push <= '1';
+								
+                        ELSIF opcode(12 DOWNTO 11) = OP_STM THEN
+								--OP_STM					
+								next_state <= fetch_dec_ex;
+								reg_di_sel <= '1';
+								alu_b_in_sel <= '1';
+								mem_wr_ena <= '1';
+								stack_push <= '1';
+								    
+                       ELSIF opcode(12 DOWNTO 11) = OP_INP THEN
+								--OP_INP				
+								inp    <= '1';
+								stack_push <= '1';
+								reg_di_sel <= '1';
+								
+                       ELSIF opcode(12 DOWNTO 11) = OP_OUT THEN
+								--OP_OUT				
+								outp   <= '1';
+								stack_push <= '1';
+								reg_do_a_on_dext <= '1';
+								
+							END IF;
+						next_state <= fetch_only;
+                        
+                    -- Instruções de desvio
+                    ELSE
+                        IF opcode(12 DOWNTO 11) = OP_BC THEN
+								IF c_flag = '1' THEN
+									--OP_BC
+									next_state <= fetch_only;
+									stack_pop <= '1';
+								ELSE
+									stack_push <= '1';
+								END IF;
+							ELSIF opcode(12 DOWNTO 11) = OP_BZ THEN
+								IF z_flag = '1' THEN
+									--OP_BZ
+									next_state <= fetch_only;
+									stack_pop <= '1';
+								ELSE
+									stack_push <= '1';
+								END IF;
+							ELSIF opcode(12 DOWNTO 11) = OP_JMP THEN
+								--OP_JMP				
+								next_state <= fetch_only;
+								stack_pop <= '1';
+							END IF;
+						END IF;
+						next_state <= fetch_only;
+						--------Instrução NOP-----------------				
+					IF opcode(15 DOWNTO 11) = OP_NOP THEN					
+						stack_push <= '1';								
+					END IF;	
+					next_state <= fetch_only;
+
         END CASE;
+       END CASE;
     END PROCESS;
 
 END ARCHITECTURE arch;
-

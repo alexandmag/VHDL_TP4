@@ -1,57 +1,73 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.std_logic_unsigned.ALL;
+USE ieee.numeric_std.ALL;
 
-entity port_io is
-    generic (
-        base_addr : integer := 16#00#  -- Utilizamos o valor decimal 0
+ENTITY port_io IS
+    GENERIC (
+        base_addr : INTEGER := 0
     );
-    port (
-        clk_in     : in  std_logic;
-        nrst       : in  std_logic;
-        abus       : in  std_logic_vector(7 downto 0);
-        dbus       : inout std_logic_vector(7 downto 0);
-        wr_en      : in  std_logic;
-        rd_en      : in  std_logic;
-        port_io    : inout std_logic_vector(7 downto 0)
+    PORT (
+        nrst     : IN  STD_LOGIC;
+        clk_in   : IN  STD_LOGIC;
+        abus     : IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+        dbus     : INOUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        wr_en    : IN  STD_LOGIC;
+        rd_en    : IN  STD_LOGIC;
+        port_io  : INOUT STD_LOGIC_VECTOR(7 DOWNTO 0)
     );
-end entity port_io;
+END ENTITY;
 
-architecture behavior of port_io is
-    signal dir_reg  : std_logic_vector(7 downto 0) := (others => '0');
-    signal port_reg : std_logic_vector(7 downto 0) := (others => '0');
-    signal latch    : std_logic_vector(7 downto 0);
-begin
+ARCHITECTURE arch OF port_io IS
+    SIGNAL port_reg : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL dir_reg  : STD_LOGIC_VECTOR(7 DOWNTO 0);
+    SIGNAL latch    : STD_LOGIC_VECTOR(7 DOWNTO 0);
+BEGIN
 
-    process(clk_in, nrst)
-    begin
-        if nrst = '0' then
-            dir_reg <= (others => '0');
-            port_reg <= (others => '0');
-        elsif rising_edge(clk_in) then
-            if wr_en = '1' then
-                if abus = std_logic_vector(to_unsigned(base_addr, 8)) then
+    -- Asynchronous reset
+    PROCESS(nrst, clk_in)
+    BEGIN
+        IF nrst = '0' THEN
+            port_reg <= (OTHERS => '0');
+            dir_reg  <= (OTHERS => '0');
+        ELSIF rising_edge(clk_in) THEN
+            -- Write operations
+            IF wr_en = '1' THEN
+                IF abus = std_logic_vector(to_unsigned(base_addr, 8)) THEN
                     port_reg <= dbus;
-                elsif abus = std_logic_vector(to_unsigned(base_addr + 1, 8)) then
+                ELSIF abus = std_logic_vector(to_unsigned(base_addr + 1, 8)) THEN
                     dir_reg <= dbus;
-                end if;
-            end if;
-        end if;
-    end process;
+                END IF;
+            END IF;
+        END IF;
+    END PROCESS;
 
-    process(all)
-    begin
-        for i in 0 to 7 loop
-            if dir_reg(i) = '1' then
-                port_io(i) <= port_reg(i);
-            else
-                latch(i) <= port_io(i);
-            end if;
-        end loop;
-    end process;
+    -- Read operations
+    PROCESS(rd_en, abus, port_reg, dir_reg)
+    BEGIN
+        IF rd_en = '1' THEN
+            IF abus = std_logic_vector(to_unsigned(base_addr, 8)) THEN
+                dbus <= port_reg;
+            ELSIF abus = std_logic_vector(to_unsigned(base_addr + 1, 8)) THEN
+                dbus <= dir_reg;
+            ELSE
+                dbus <= (OTHERS => 'Z');
+            END IF;
+        ELSE
+            dbus <= (OTHERS => 'Z');
+        END IF;
+    END PROCESS;
 
-    dbus <= port_reg when (rd_en = '1' and abus = std_logic_vector(to_unsigned(base_addr, 8))) else
-            dir_reg when (rd_en = '1' and abus = std_logic_vector(to_unsigned(base_addr + 1, 8))) else
-            (others => 'Z');
+    -- Bidirectional port handling
+    PROCESS(dir_reg, port_reg, port_io)
+    BEGIN
+        FOR i IN 0 TO 7 LOOP
+            IF dir_reg(i) = '1' THEN
+                port_io(i) <= port_reg(i); -- Output
+            ELSE
+                port_reg(i) <= port_io(i); -- Input
+            END IF;
+        END LOOP;
+    END PROCESS;
 
-end architecture behavior;
+END ARCHITECTURE;
