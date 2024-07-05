@@ -1,4 +1,4 @@
--- Bibliotecas e pacotes necessários
+-- Bibliotecas e pacotes necess?rios
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
@@ -9,39 +9,39 @@ ENTITY control_unit IS
         -- Entradas
         nrst           : IN STD_LOGIC;                         -- Reset
         clk            : IN STD_LOGIC;                         -- Clock
-        opcode         : IN STD_LOGIC_VECTOR(15 DOWNTO 9);     -- Código de operação
+        opcode         : IN STD_LOGIC_VECTOR(15 DOWNTO 9);     -- C?digo de opera??o
         c_flag         : IN STD_LOGIC;                         -- Flag Carry
         z_flag         : IN STD_LOGIC;                         -- Flag Zero
         v_flag         : IN STD_LOGIC;                         -- Flag Overflow
         
-        -- Saídas
+        -- Sa?das
         reg_do_a_on_dext : OUT STD_LOGIC;                       -- Sinal de controle do registrador
-        reg_di_sel       : OUT STD_LOGIC;                       -- Seleção de entrada do registrador
-        alu_b_in_sel     : OUT STD_LOGIC;                       -- Seleção da entrada B da ALU
+        reg_di_sel       : OUT STD_LOGIC;                       -- Sele??o de entrada do registrador
+        alu_b_in_sel     : OUT STD_LOGIC;                       -- Sele??o da entrada B da ALU
         wr_reg_ena       : OUT STD_LOGIC;                       -- Habilita escrita no registrador
         flag_c_wr_ena    : OUT STD_LOGIC;                       -- Habilita escrita do flag C
         flag_z_wr_ena    : OUT STD_LOGIC;                       -- Habilita escrita do flag Z
         flag_v_wr_ena    : OUT STD_LOGIC;                       -- Habilita escrita do flag V
-        alu_op           : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);    -- Operação da ALU
+        alu_op           : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);    -- Opera??o da ALU
         stack_push       : OUT STD_LOGIC;                       -- Empilhar (push) na pilha
         stack_pop        : OUT STD_LOGIC;                       -- Desempilhar (pop) da pilha
         pc_ctrl          : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);    -- Controle do contador de programa
-        mem_wr_ena       : OUT STD_LOGIC;                       -- Habilita escrita na memória
-        mem_rd_ena       : OUT STD_LOGIC;                       -- Habilita leitura da memória
+        mem_wr_ena       : OUT STD_LOGIC;                       -- Habilita escrita na mem?ria
+        mem_rd_ena       : OUT STD_LOGIC;                       -- Habilita leitura da mem?ria
         inp              : OUT STD_LOGIC;                       -- Entrada
-        outp             : OUT STD_LOGIC                        -- Saída
+        outp             : OUT STD_LOGIC                        -- Sa?da
     );
 END ENTITY control_unit;
 
 -- Arquitetura da unidade de controle
 ARCHITECTURE arch OF control_unit IS
 
-    -- Definição dos estados
+    -- Defini??o dos estados
     TYPE state_type IS (rst, fetch_only, fetch_dec_ex);
     SIGNAL pres_state : state_type;
     SIGNAL next_state : state_type;
     
-    -- Definição das operações da ALU
+    -- Defini??o das opera??es da ALU
     CONSTANT ALU_OP_AND  : STD_LOGIC_VECTOR(3 DOWNTO 0) := "0000";
     CONSTANT ALU_OP_OR   : STD_LOGIC_VECTOR(3 DOWNTO 0) := "0001";
     CONSTANT ALU_OP_XOR  : STD_LOGIC_VECTOR(3 DOWNTO 0) := "0010";
@@ -59,7 +59,7 @@ ARCHITECTURE arch OF control_unit IS
     CONSTANT ALU_OP_SRA  : STD_LOGIC_VECTOR(3 DOWNTO 0) := "1110";
     CONSTANT ALU_OP_PASS_B : STD_LOGIC_VECTOR(3 DOWNTO 0) := "1111";
     
-    -- Instruções ALU e dois registradores (Reg-Reg)
+    -- Instru??es ALU e dois registradores (Reg-Reg)
     CONSTANT OP_AND  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "000";
     CONSTANT OP_OR   : STD_LOGIC_VECTOR (2 DOWNTO 0) := "001";
     CONSTANT OP_XOR  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "010";
@@ -69,7 +69,7 @@ ARCHITECTURE arch OF control_unit IS
     CONSTANT OP_SUB  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "110";
     CONSTANT OP_SUBC : STD_LOGIC_VECTOR (2 DOWNTO 0) := "111";
     
-    -- Instruções ALU e um valor imediato (Reg-Immed)
+    -- Instru??es ALU e um valor imediato (Reg-Immed)
     CONSTANT OP_ANDI  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "000";
     CONSTANT OP_ORI   : STD_LOGIC_VECTOR (2 DOWNTO 0) := "001";    
     CONSTANT OP_XORI  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "010";
@@ -79,7 +79,7 @@ ARCHITECTURE arch OF control_unit IS
     CONSTANT OP_SUBI  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "110";
     CONSTANT OP_SUBIC : STD_LOGIC_VECTOR (2 DOWNTO 0) := "111";
     
-    -- Instruções ALU e um registrador
+    -- Instru??es ALU e um registrador
     CONSTANT OP_RL   : STD_LOGIC_VECTOR (2 DOWNTO 0) := "000";
     CONSTANT OP_RR   : STD_LOGIC_VECTOR (2 DOWNTO 0) := "001";
     CONSTANT OP_RLC  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "010";
@@ -89,13 +89,13 @@ ARCHITECTURE arch OF control_unit IS
     CONSTANT OP_SRA  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "110";
     CONSTANT OP_CMP  : STD_LOGIC_VECTOR (2 DOWNTO 0) := "111";
     
-    -- Instruções de memória e E/S
+    -- Instru??es de mem?ria e E/S
     CONSTANT OP_LDM : STD_LOGIC_VECTOR (1 DOWNTO 0) := "00";
     CONSTANT OP_STM : STD_LOGIC_VECTOR (1 DOWNTO 0) := "01";
     CONSTANT OP_INP : STD_LOGIC_VECTOR (1 DOWNTO 0) := "10";
     CONSTANT OP_OUT : STD_LOGIC_VECTOR (1 DOWNTO 0) := "11";    
     
-    -- Instruções de desvio
+    -- Instru??es de desvio
     CONSTANT OP_BC : STD_LOGIC_VECTOR (1 DOWNTO 0) := "00";
     CONSTANT OP_BZ : STD_LOGIC_VECTOR (1 DOWNTO 0) := "01";
     CONSTANT OP_JMP : STD_LOGIC_VECTOR (1 DOWNTO 0) := "10";
@@ -132,7 +132,7 @@ BEGIN
         mem_rd_ena <= '0';
         inp <= '0';
         outp <= '0';
-		next_state <= pres_state; -- Manter o estado atual por padrão
+		next_state <= pres_state; -- Manter o estado atual por padr?o
 		 
         CASE pres_state IS
             WHEN rst =>
@@ -144,7 +144,7 @@ BEGIN
             
             WHEN fetch_dec_ex =>
                 CASE opcode(15 DOWNTO 14) IS
-                    -- Instruções ALU e dois registradores (Reg-Reg)
+                    -- Instru??es ALU e dois registradores (Reg-Reg)
                     WHEN "00" =>
 						wr_reg_ena <= '1';
 						stack_push  <= '1';
@@ -154,40 +154,48 @@ BEGIN
                             WHEN OP_AND =>
                                
                                 alu_op <= ALU_OP_AND;
+                                pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_OR =>
                               
                                 alu_op <= ALU_OP_OR;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
 
                             WHEN OP_XOR =>
                                 alu_op <= ALU_OP_XOR;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
 
                             WHEN OP_MOV =>
                                 alu_op <= ALU_OP_PASS_B;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
 
                             WHEN OP_ADD =>
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
                                 alu_op <= ALU_OP_ADD;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_ADDC =>
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
                                 alu_op <= ALU_OP_ADDC;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_SUB =>
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
                                 alu_op <= ALU_OP_SUB;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
 
                             WHEN OP_SUBC =>
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
                                 alu_op <= ALU_OP_SUBC;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                         END CASE;
                         next_state <= fetch_only;
                 
-                    -- Instruções ALU e um valor imediato (Reg-Immed)
+                    -- Instru??es ALU e um valor imediato (Reg-Immed)
                     WHEN "01" =>
                         reg_di_sel <= '1';
                         alu_b_in_sel <= '1';
@@ -196,39 +204,46 @@ BEGIN
                         CASE opcode(13 DOWNTO 11) IS
                             WHEN OP_ANDI =>
                                 alu_op <= ALU_OP_AND;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_ORI =>
                                 alu_op <= ALU_OP_OR;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_XORI =>
                                 alu_op <= ALU_OP_XOR;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_MOVI =>
                                 alu_op <= ALU_OP_PASS_B;
-                                
+                                  pc_ctrl <= "11"; -- Incrementar o PC                                
                             WHEN OP_ADDI =>
                                 alu_op <= ALU_OP_ADD;
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_ADDIC =>
                                 alu_op <= ALU_OP_ADDC;
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_SUBI =>
                                 alu_op <= ALU_OP_SUB;
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_SUBIC =>
                                 alu_op <= ALU_OP_SUBC;
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                         END CASE;
                         next_state <= fetch_only;
 
-                    -- Instruções ALU e um registrador
+                    -- Instru??es ALU e um registrador
                     WHEN "10" =>
                     
 						alu_b_in_sel  <= '1';
@@ -238,37 +253,45 @@ BEGIN
                         CASE opcode(13 DOWNTO 11) IS
                             WHEN OP_RL =>
                                 alu_op <= ALU_OP_RL;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_RR =>
                                 alu_op <= ALU_OP_RR;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_RLC =>
                             
                                 alu_op <= ALU_OP_RLC;
                                 flag_c_wr_ena <= '1';
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_RRC =>
                                 alu_op <= ALU_OP_RRC;
                                 flag_c_wr_ena <= '1';
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_SLL =>
                             
                                 alu_op <= ALU_OP_SLL;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_SRL =>
                             
                                 alu_op <= ALU_OP_SRL;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_SRA =>
                                 alu_op <= ALU_OP_SRA;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_CMP =>
                                 alu_op <= ALU_OP_SUB;
+                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                         END CASE;
                         next_state <= fetch_only;
 
-                    -- Instruções de memória e E/S
+                    -- Instru??es de mem?ria e E/S
                     WHEN "11" =>
 						IF opcode(13) = '0' THEN
 							
@@ -278,7 +301,6 @@ BEGIN
 								reg_di_sel <= '1';
 								mem_rd_ena <= '1';
 								wr_reg_ena <= '1';
-								stack_push <= '1';
 								
                         ELSIF opcode(12 DOWNTO 11) = OP_STM THEN
 								--OP_STM					
@@ -286,7 +308,6 @@ BEGIN
 								reg_di_sel <= '1';
 								alu_b_in_sel <= '1';
 								mem_wr_ena <= '1';
-								stack_push <= '1';
 								    
                        ELSIF opcode(12 DOWNTO 11) = OP_INP THEN
 								--OP_INP				
@@ -303,7 +324,7 @@ BEGIN
 							END IF;
 						next_state <= fetch_only;
                         
-                    -- Instruções de desvio
+                    -- Instru??es de desvio
                     ELSE
                         IF opcode(12 DOWNTO 11) = OP_BC THEN
 								IF c_flag = '1' THEN
@@ -328,7 +349,7 @@ BEGIN
 							END IF;
 						END IF;
 						next_state <= fetch_only;
-						--------Instrução NOP-----------------				
+						--------Instru??o NOP-----------------				
 					IF opcode(15 DOWNTO 11) = OP_NOP THEN					
 						stack_push <= '1';								
 					END IF;	

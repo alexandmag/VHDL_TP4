@@ -1,0 +1,32 @@
+; Inicialização
+101 000 0000 0000 ; IN R2, [porta_entrada]
+100 000 0000 0000 ; LOAD R1, 0000
+100 000 0100 0100 ; LOAD R4, 0100
+
+loop_start:
+; Loop Principal
+101 000 0000 0000 ; IN R2, [porta_entrada]
+
+; Verificar estado da chave
+011 010 0000 0010 ; BEQ R2, 0, seq_up
+
+; Sequência do menos significativo para o mais significativo
+101 001 0000 0001 ; OUT [porta_saida], R1
+000 100 0000 0001 ; ADD R1, R1, 1
+011 000 0000 1000 ; JMP delay
+
+seq_up:
+; Sequência do mais significativo para o menos significativo
+101 001 0000 0001 ; OUT [porta_saida], R1
+000 110 0000 0001 ; SUB R1, R1, 1
+011 000 0000 1000 ; JMP delay
+
+delay:
+; Atraso
+100 000 0011 0100 ; LOAD R3, R4
+
+delay_loop:
+011 000 0000 0000 ; NOP
+000 110 0011 0001 ; SUB R3, R3, 1
+011 010 0011 0000 ; BEQ R3, 0, loop_start
+011 000 0000 1000 ; JMP delay_loop
