@@ -154,44 +154,35 @@ BEGIN
                             WHEN OP_AND =>
                                
                                 alu_op <= ALU_OP_AND;
-                                pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_OR =>
                               
                                 alu_op <= ALU_OP_OR;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
 
                             WHEN OP_XOR =>
                                 alu_op <= ALU_OP_XOR;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
-
                             WHEN OP_MOV =>
                                 alu_op <= ALU_OP_PASS_B;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
 
                             WHEN OP_ADD =>
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
                                 alu_op <= ALU_OP_ADD;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_ADDC =>
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
                                 alu_op <= ALU_OP_ADDC;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_SUB =>
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
                                 alu_op <= ALU_OP_SUB;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
 
                             WHEN OP_SUBC =>
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
                                 alu_op <= ALU_OP_SUBC;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
                         END CASE;
                         next_state <= fetch_only;
                 
@@ -204,42 +195,34 @@ BEGIN
                         CASE opcode(13 DOWNTO 11) IS
                             WHEN OP_ANDI =>
                                 alu_op <= ALU_OP_AND;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_ORI =>
                                 alu_op <= ALU_OP_OR;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_XORI =>
                                 alu_op <= ALU_OP_XOR;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_MOVI =>
-                                alu_op <= ALU_OP_PASS_B
-                                  pc_ctrl <= "11"; -- Incrementar o PC                                
+                                alu_op <= ALU_OP_PASS_B;                              
                             WHEN OP_ADDI =>
                                 alu_op <= ALU_OP_ADD;
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
-                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_ADDIC =>
                                 alu_op <= ALU_OP_ADDC;
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
-                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_SUBI =>
                                 alu_op <= ALU_OP_SUB;
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
-                                  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_SUBIC =>
                                 alu_op <= ALU_OP_SUBC;
                                 flag_c_wr_ena <= '1';
                                 flag_z_wr_ena <= '1';
-                                  pc_ctrl <= "11"; -- Incrementar o PC
                         END CASE;
                         next_state <= fetch_only;
 
@@ -248,45 +231,45 @@ BEGIN
                     
 						alu_b_in_sel  <= '1';
 						wr_reg_ena <= '1';
-						stack_push   <= '1';
+					--	stack_push   <= '1';
 						
                         CASE opcode(13 DOWNTO 11) IS
                             WHEN OP_RL =>
                                 alu_op <= ALU_OP_RL;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
+                                 -- pc_ <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_RR =>
                                 alu_op <= ALU_OP_RR;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
+                                 -- pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_RLC =>
                             
                                 alu_op <= ALU_OP_RLC;
                                 flag_c_wr_ena <= '1';
-                                  pc_ctrl <= "11"; -- Incrementar o PC
+                                --  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_RRC =>
                                 alu_op <= ALU_OP_RRC;
                                 flag_c_wr_ena <= '1';
-                                  pc_ctrl <= "11"; -- Incrementar o PC
+                                 -- pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_SLL =>
                             
                                 alu_op <= ALU_OP_SLL;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
+                                 -- pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_SRL =>
                             
                                 alu_op <= ALU_OP_SRL;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
+                                 -- pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_SRA =>
                                 alu_op <= ALU_OP_SRA;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
+                                --  pc_ctrl <= "11"; -- Incrementar o PC
                                 
                             WHEN OP_CMP =>
                                 alu_op <= ALU_OP_SUB;
-                                  pc_ctrl <= "11"; -- Incrementar o PC
+                               --   pc_ctrl <= "11"; -- Incrementar o PC
                                 
                         END CASE;
                         next_state <= fetch_only;
@@ -318,7 +301,6 @@ BEGIN
                        ELSIF opcode(12 DOWNTO 11) = OP_OUT THEN
 								--OP_OUT				
 								outp   <= '1';
-								stack_push <= '1';
 								reg_do_a_on_dext <= '1';
 								
 							END IF;
@@ -329,23 +311,21 @@ BEGIN
                         IF opcode(12 DOWNTO 11) = OP_BC THEN
 								IF c_flag = '1' THEN
 									--OP_BC
-									next_state <= fetch_only;
-									stack_pop <= '1';
+									pc_ctrl <= "10"; 
 								ELSE
 									stack_push <= '1';
 								END IF;
 							ELSIF opcode(12 DOWNTO 11) = OP_BZ THEN
 								IF z_flag = '1' THEN
 									--OP_BZ
-									next_state <= fetch_only;
-									stack_pop <= '1';
+									pc_ctrl <= "10";
 								ELSE
 									stack_push <= '1';
 								END IF;
 							ELSIF opcode(12 DOWNTO 11) = OP_JMP THEN
 								--OP_JMP				
-								next_state <= fetch_only;
-								stack_pop <= '1';
+								pc_ctrl <= "10";
+								 next_state <= fetch_only;
 							END IF;
 						END IF;
 						next_state <= fetch_only;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PUC1-24
-Sat Jul 06 15:54:10 2024
+Sat Jul 06 18:19:46 2024
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -19,7 +19,7 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  11. Registers Removed During Synthesis
  12. General Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_j391:auto_generated
+ 14. Source assignments for rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_lrb1:auto_generated
  15. Parameter Settings for User Entity Instance: BUSMUX:inst2
  16. Parameter Settings for User Entity Instance: rom_2k_16:inst7|altsyncram:altsyncram_component
  17. Parameter Settings for User Entity Instance: BUSMUX:inst1
@@ -53,13 +53,13 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jul 06 15:54:10 2024        ;
+; Analysis & Synthesis Status        ; Successful - Sat Jul 06 18:19:46 2024        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; PUC1-24                                      ;
 ; Top-level Entity Name              ; PUC1-24                                      ;
 ; Family                             ; Cyclone II                                   ;
-; Total logic elements               ; 4,091                                        ;
-;     Total combinational functions  ; 1,964                                        ;
+; Total logic elements               ; 4,131                                        ;
+;     Total combinational functions  ; 2,004                                        ;
 ;     Dedicated logic registers      ; 2,157                                        ;
 ; Total registers                    ; 2157                                         ;
 ; Total pins                         ; 61                                           ;
@@ -155,34 +155,34 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 4      ;
+; Number detected on machine ; 2      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                            ;
-+----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                        ;
-+----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
-; PUC1-24.bdf                      ; yes             ; User Block Diagram/Schematic File      ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/PUC1-24.bdf            ;
-; rom_2k_16.vhd                    ; yes             ; User Wizard-Generated File             ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/rom_2k_16.vhd          ;
-; control_unit.vhd                 ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/control_unit.vhd       ;
-; reg_bank.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/reg_bank.vhd           ;
-; alu_3.vhd                        ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/alu_3.vhd              ;
-; busmux.tdf                       ; yes             ; Megafunction                           ; c:/users/alexa/onedrive/documentos/altera/altera/91sp2/quartus/libraries/megafunctions/busmux.tdf                   ;
-; lpm_mux.tdf                      ; yes             ; Megafunction                           ; c:/users/alexa/onedrive/documentos/altera/altera/91sp2/quartus/libraries/megafunctions/lpm_mux.tdf                  ;
-; db/mux_smc.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/db/mux_smc.tdf         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/users/alexa/onedrive/documentos/altera/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf               ;
-; db/altsyncram_j391.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/db/altsyncram_j391.tdf ;
-; program-1.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/program-1.mif          ;
-; prog_cnt.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/prog_cnt.vhd           ;
-; stack.vhd                        ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/stack.vhd              ;
-; ram_256x8.vhd                    ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/ram_256x8.vhd          ;
-; port_io.vhd                      ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/port_io.vhd            ;
-; lpm_add_sub.tdf                  ; yes             ; Megafunction                           ; c:/users/alexa/onedrive/documentos/altera/altera/91sp2/quartus/libraries/megafunctions/lpm_add_sub.tdf              ;
-; db/add_sub_rpi.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/db/add_sub_rpi.tdf     ;
-+----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                          ;
++-------------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+
+; File Name with User-Entered Path                ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                       ;
++-------------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+
+; PUC1-24.bdf                                     ; yes             ; User Block Diagram/Schematic File      ; C:/Users/User/Documents/GitHub/VHDL_TP4/PUC1-24.bdf                                ;
+; rom_2k_16.vhd                                   ; yes             ; User Wizard-Generated File             ; C:/Users/User/Documents/GitHub/VHDL_TP4/rom_2k_16.vhd                              ;
+; control_unit.vhd                                ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/control_unit.vhd                           ;
+; reg_bank.vhd                                    ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/reg_bank.vhd                               ;
+; alu_3.vhd                                       ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/alu_3.vhd                                  ;
+; busmux.tdf                                      ; yes             ; Megafunction                           ; c:/users/user/desktop/altera/91sp2/quartus/libraries/megafunctions/busmux.tdf      ;
+; lpm_mux.tdf                                     ; yes             ; Megafunction                           ; c:/users/user/desktop/altera/91sp2/quartus/libraries/megafunctions/lpm_mux.tdf     ;
+; db/mux_smc.tdf                                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/User/Documents/GitHub/VHDL_TP4/db/mux_smc.tdf                             ;
+; altsyncram.tdf                                  ; yes             ; Megafunction                           ; c:/users/user/desktop/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf  ;
+; db/altsyncram_lrb1.tdf                          ; yes             ; Auto-Generated Megafunction            ; C:/Users/User/Documents/GitHub/VHDL_TP4/db/altsyncram_lrb1.tdf                     ;
+; ../../../../Documents/GitHub/VHDL_TP4/teste.mif ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/User/Documents/GitHub/VHDL_TP4/teste.mif                                  ;
+; prog_cnt.vhd                                    ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/prog_cnt.vhd                               ;
+; stack.vhd                                       ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/stack.vhd                                  ;
+; ram_256x8.vhd                                   ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/ram_256x8.vhd                              ;
+; port_io.vhd                                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/port_io.vhd                                ;
+; lpm_add_sub.tdf                                 ; yes             ; Megafunction                           ; c:/users/user/desktop/altera/91sp2/quartus/libraries/megafunctions/lpm_add_sub.tdf ;
+; db/add_sub_rpi.tdf                              ; yes             ; Auto-Generated Megafunction            ; C:/Users/User/Documents/GitHub/VHDL_TP4/db/add_sub_rpi.tdf                         ;
++-------------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -190,16 +190,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 4,091  ;
+; Estimated Total logic elements              ; 4,131  ;
 ;                                             ;        ;
-; Total combinational functions               ; 1964   ;
+; Total combinational functions               ; 2004   ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 1597   ;
-;     -- 3 input functions                    ; 341    ;
-;     -- <=2 input functions                  ; 26     ;
+;     -- 4 input functions                    ; 1874   ;
+;     -- 3 input functions                    ; 95     ;
+;     -- <=2 input functions                  ; 35     ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 1936   ;
+;     -- normal mode                          ; 1976   ;
 ;     -- arithmetic mode                      ; 28     ;
 ;                                             ;        ;
 ; Total registers                             ; 2157   ;
@@ -210,8 +210,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Total memory bits                           ; 32768  ;
 ; Maximum fan-out node                        ; clk_50 ;
 ; Maximum fan-out                             ; 2173   ;
-; Total fan-out                               ; 16332  ;
-; Average fan-out                             ; 3.89   ;
+; Total fan-out                               ; 16719  ;
+; Average fan-out                             ; 3.95   ;
 +---------------------------------------------+--------+
 
 
@@ -220,36 +220,36 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
-; |PUC1-24                                  ; 1964 (27)         ; 2157 (0)     ; 32768       ; 0            ; 0       ; 0         ; 61   ; 0            ; |PUC1-24                                                                                ; work         ;
-;    |alu_3:inst|                           ; 96 (78)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|alu_3:inst                                                                     ; work         ;
+; |PUC1-24                                  ; 2004 (28)         ; 2157 (0)     ; 32768       ; 0            ; 0       ; 0         ; 61   ; 0            ; |PUC1-24                                                                                ; work         ;
+;    |alu_3:inst|                           ; 109 (91)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|alu_3:inst                                                                     ; work         ;
 ;       |lpm_add_sub:Add0|                  ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|alu_3:inst|lpm_add_sub:Add0                                                    ;              ;
 ;          |add_sub_rpi:auto_generated|     ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|alu_3:inst|lpm_add_sub:Add0|add_sub_rpi:auto_generated                         ;              ;
-;    |busmux:inst1|                         ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst1                                                                   ;              ;
-;       |lpm_mux:$00000|                    ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst1|lpm_mux:$00000                                                    ;              ;
-;          |mux_smc:auto_generated|         ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst1|lpm_mux:$00000|mux_smc:auto_generated                             ;              ;
+;    |busmux:inst1|                         ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst1                                                                   ;              ;
+;       |lpm_mux:$00000|                    ; 9 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst1|lpm_mux:$00000                                                    ; work         ;
+;          |mux_smc:auto_generated|         ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst1|lpm_mux:$00000|mux_smc:auto_generated                             ; work         ;
 ;    |busmux:inst2|                         ; 42 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst2                                                                   ; work         ;
 ;       |lpm_mux:$00000|                    ; 42 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst2|lpm_mux:$00000                                                    ; work         ;
 ;          |mux_smc:auto_generated|         ; 42 (42)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst2|lpm_mux:$00000|mux_smc:auto_generated                             ; work         ;
-;    |control_unit:inst3|                   ; 30 (30)           ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|control_unit:inst3                                                             ;              ;
-;    |port_io:inst12|                       ; 20 (20)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|port_io:inst12                                                                 ;              ;
-;    |port_io:inst13|                       ; 23 (23)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|port_io:inst13                                                                 ;              ;
-;    |prog_cnt:inst4|                       ; 11 (11)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|prog_cnt:inst4                                                                 ; work         ;
-;    |ram_256x8:inst11|                     ; 1648 (1648)       ; 2048 (2048)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|ram_256x8:inst11                                                               ;              ;
-;    |reg_bank:inst10|                      ; 59 (59)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|reg_bank:inst10                                                                ; work         ;
+;    |control_unit:inst3|                   ; 32 (32)           ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|control_unit:inst3                                                             ;              ;
+;    |port_io:inst12|                       ; 20 (20)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|port_io:inst12                                                                 ; work         ;
+;    |port_io:inst13|                       ; 23 (23)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|port_io:inst13                                                                 ; work         ;
+;    |prog_cnt:inst4|                       ; 33 (33)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|prog_cnt:inst4                                                                 ; work         ;
+;    |ram_256x8:inst11|                     ; 1648 (1648)       ; 2048 (2048)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|ram_256x8:inst11                                                               ; work         ;
+;    |reg_bank:inst10|                      ; 60 (60)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|reg_bank:inst10                                                                ; work         ;
 ;    |rom_2k_16:inst7|                      ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|rom_2k_16:inst7                                                                ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|rom_2k_16:inst7|altsyncram:altsyncram_component                                ; work         ;
-;          |altsyncram_j391:auto_generated| ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_j391:auto_generated ; work         ;
+;          |altsyncram_lrb1:auto_generated| ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_lrb1:auto_generated ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                            ;
-+-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+---------------+
-; Name                                                                                      ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF           ;
-+-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+---------------+
-; rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_j391:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 2048         ; 16           ; --           ; --           ; 32768 ; program-1.mif ;
-+-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+---------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                              ;
++-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
+; Name                                                                                      ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                             ;
++-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
+; rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_lrb1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 2048         ; 16           ; --           ; --           ; 32768 ; ../../../../Documents/GitHub/VHDL_TP4/teste.mif ;
++-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+-------------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -295,6 +295,83 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+--------------------+
 ; Register name                          ; Reason for Removal ;
 +----------------------------------------+--------------------+
+; Stack:inst14|stack[7][10]              ; Lost fanout        ;
+; Stack:inst14|stack[7][9]               ; Lost fanout        ;
+; Stack:inst14|stack[7][8]               ; Lost fanout        ;
+; Stack:inst14|stack[7][7]               ; Lost fanout        ;
+; Stack:inst14|stack[7][6]               ; Lost fanout        ;
+; Stack:inst14|stack[7][5]               ; Lost fanout        ;
+; Stack:inst14|stack[7][4]               ; Lost fanout        ;
+; Stack:inst14|stack[7][3]               ; Lost fanout        ;
+; Stack:inst14|stack[7][2]               ; Lost fanout        ;
+; Stack:inst14|stack[7][1]               ; Lost fanout        ;
+; Stack:inst14|stack[7][0]               ; Lost fanout        ;
+; Stack:inst14|stack[6][10]              ; Lost fanout        ;
+; Stack:inst14|stack[6][9]               ; Lost fanout        ;
+; Stack:inst14|stack[6][8]               ; Lost fanout        ;
+; Stack:inst14|stack[6][7]               ; Lost fanout        ;
+; Stack:inst14|stack[6][6]               ; Lost fanout        ;
+; Stack:inst14|stack[6][5]               ; Lost fanout        ;
+; Stack:inst14|stack[6][4]               ; Lost fanout        ;
+; Stack:inst14|stack[6][3]               ; Lost fanout        ;
+; Stack:inst14|stack[6][2]               ; Lost fanout        ;
+; Stack:inst14|stack[6][1]               ; Lost fanout        ;
+; Stack:inst14|stack[6][0]               ; Lost fanout        ;
+; Stack:inst14|stack[5][10]              ; Lost fanout        ;
+; Stack:inst14|stack[5][9]               ; Lost fanout        ;
+; Stack:inst14|stack[5][8]               ; Lost fanout        ;
+; Stack:inst14|stack[5][7]               ; Lost fanout        ;
+; Stack:inst14|stack[5][6]               ; Lost fanout        ;
+; Stack:inst14|stack[5][5]               ; Lost fanout        ;
+; Stack:inst14|stack[5][4]               ; Lost fanout        ;
+; Stack:inst14|stack[5][3]               ; Lost fanout        ;
+; Stack:inst14|stack[5][2]               ; Lost fanout        ;
+; Stack:inst14|stack[5][1]               ; Lost fanout        ;
+; Stack:inst14|stack[5][0]               ; Lost fanout        ;
+; Stack:inst14|stack[4][10]              ; Lost fanout        ;
+; Stack:inst14|stack[4][9]               ; Lost fanout        ;
+; Stack:inst14|stack[4][8]               ; Lost fanout        ;
+; Stack:inst14|stack[4][7]               ; Lost fanout        ;
+; Stack:inst14|stack[4][6]               ; Lost fanout        ;
+; Stack:inst14|stack[4][5]               ; Lost fanout        ;
+; Stack:inst14|stack[4][4]               ; Lost fanout        ;
+; Stack:inst14|stack[4][3]               ; Lost fanout        ;
+; Stack:inst14|stack[4][2]               ; Lost fanout        ;
+; Stack:inst14|stack[4][1]               ; Lost fanout        ;
+; Stack:inst14|stack[4][0]               ; Lost fanout        ;
+; Stack:inst14|stack[3][10]              ; Lost fanout        ;
+; Stack:inst14|stack[3][9]               ; Lost fanout        ;
+; Stack:inst14|stack[3][8]               ; Lost fanout        ;
+; Stack:inst14|stack[3][7]               ; Lost fanout        ;
+; Stack:inst14|stack[3][6]               ; Lost fanout        ;
+; Stack:inst14|stack[3][5]               ; Lost fanout        ;
+; Stack:inst14|stack[3][4]               ; Lost fanout        ;
+; Stack:inst14|stack[3][3]               ; Lost fanout        ;
+; Stack:inst14|stack[3][2]               ; Lost fanout        ;
+; Stack:inst14|stack[3][1]               ; Lost fanout        ;
+; Stack:inst14|stack[3][0]               ; Lost fanout        ;
+; Stack:inst14|stack[2][10]              ; Lost fanout        ;
+; Stack:inst14|stack[2][9]               ; Lost fanout        ;
+; Stack:inst14|stack[2][8]               ; Lost fanout        ;
+; Stack:inst14|stack[2][7]               ; Lost fanout        ;
+; Stack:inst14|stack[2][6]               ; Lost fanout        ;
+; Stack:inst14|stack[2][5]               ; Lost fanout        ;
+; Stack:inst14|stack[2][4]               ; Lost fanout        ;
+; Stack:inst14|stack[2][3]               ; Lost fanout        ;
+; Stack:inst14|stack[2][2]               ; Lost fanout        ;
+; Stack:inst14|stack[2][1]               ; Lost fanout        ;
+; Stack:inst14|stack[2][0]               ; Lost fanout        ;
+; Stack:inst14|stack[1][10]              ; Lost fanout        ;
+; Stack:inst14|stack[1][9]               ; Lost fanout        ;
+; Stack:inst14|stack[1][8]               ; Lost fanout        ;
+; Stack:inst14|stack[1][7]               ; Lost fanout        ;
+; Stack:inst14|stack[1][6]               ; Lost fanout        ;
+; Stack:inst14|stack[1][5]               ; Lost fanout        ;
+; Stack:inst14|stack[1][4]               ; Lost fanout        ;
+; Stack:inst14|stack[1][3]               ; Lost fanout        ;
+; Stack:inst14|stack[1][2]               ; Lost fanout        ;
+; Stack:inst14|stack[1][1]               ; Lost fanout        ;
+; Stack:inst14|stack[1][0]               ; Lost fanout        ;
 ; Stack:inst14|stack[0][0]               ; Lost fanout        ;
 ; Stack:inst14|stack[0][1]               ; Lost fanout        ;
 ; Stack:inst14|stack[0][2]               ; Lost fanout        ;
@@ -306,83 +383,6 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Stack:inst14|stack[0][8]               ; Lost fanout        ;
 ; Stack:inst14|stack[0][9]               ; Lost fanout        ;
 ; Stack:inst14|stack[0][10]              ; Lost fanout        ;
-; Stack:inst14|stack[1][0]               ; Lost fanout        ;
-; Stack:inst14|stack[1][1]               ; Lost fanout        ;
-; Stack:inst14|stack[1][2]               ; Lost fanout        ;
-; Stack:inst14|stack[1][3]               ; Lost fanout        ;
-; Stack:inst14|stack[1][4]               ; Lost fanout        ;
-; Stack:inst14|stack[1][5]               ; Lost fanout        ;
-; Stack:inst14|stack[1][6]               ; Lost fanout        ;
-; Stack:inst14|stack[1][7]               ; Lost fanout        ;
-; Stack:inst14|stack[1][8]               ; Lost fanout        ;
-; Stack:inst14|stack[1][9]               ; Lost fanout        ;
-; Stack:inst14|stack[1][10]              ; Lost fanout        ;
-; Stack:inst14|stack[2][0]               ; Lost fanout        ;
-; Stack:inst14|stack[2][1]               ; Lost fanout        ;
-; Stack:inst14|stack[2][2]               ; Lost fanout        ;
-; Stack:inst14|stack[2][3]               ; Lost fanout        ;
-; Stack:inst14|stack[2][4]               ; Lost fanout        ;
-; Stack:inst14|stack[2][5]               ; Lost fanout        ;
-; Stack:inst14|stack[2][6]               ; Lost fanout        ;
-; Stack:inst14|stack[2][7]               ; Lost fanout        ;
-; Stack:inst14|stack[2][8]               ; Lost fanout        ;
-; Stack:inst14|stack[2][9]               ; Lost fanout        ;
-; Stack:inst14|stack[2][10]              ; Lost fanout        ;
-; Stack:inst14|stack[3][0]               ; Lost fanout        ;
-; Stack:inst14|stack[3][1]               ; Lost fanout        ;
-; Stack:inst14|stack[3][2]               ; Lost fanout        ;
-; Stack:inst14|stack[3][3]               ; Lost fanout        ;
-; Stack:inst14|stack[3][4]               ; Lost fanout        ;
-; Stack:inst14|stack[3][5]               ; Lost fanout        ;
-; Stack:inst14|stack[3][6]               ; Lost fanout        ;
-; Stack:inst14|stack[3][7]               ; Lost fanout        ;
-; Stack:inst14|stack[3][8]               ; Lost fanout        ;
-; Stack:inst14|stack[3][9]               ; Lost fanout        ;
-; Stack:inst14|stack[3][10]              ; Lost fanout        ;
-; Stack:inst14|stack[4][0]               ; Lost fanout        ;
-; Stack:inst14|stack[4][1]               ; Lost fanout        ;
-; Stack:inst14|stack[4][2]               ; Lost fanout        ;
-; Stack:inst14|stack[4][3]               ; Lost fanout        ;
-; Stack:inst14|stack[4][4]               ; Lost fanout        ;
-; Stack:inst14|stack[4][5]               ; Lost fanout        ;
-; Stack:inst14|stack[4][6]               ; Lost fanout        ;
-; Stack:inst14|stack[4][7]               ; Lost fanout        ;
-; Stack:inst14|stack[4][8]               ; Lost fanout        ;
-; Stack:inst14|stack[4][9]               ; Lost fanout        ;
-; Stack:inst14|stack[4][10]              ; Lost fanout        ;
-; Stack:inst14|stack[5][0]               ; Lost fanout        ;
-; Stack:inst14|stack[5][1]               ; Lost fanout        ;
-; Stack:inst14|stack[5][2]               ; Lost fanout        ;
-; Stack:inst14|stack[5][3]               ; Lost fanout        ;
-; Stack:inst14|stack[5][4]               ; Lost fanout        ;
-; Stack:inst14|stack[5][5]               ; Lost fanout        ;
-; Stack:inst14|stack[5][6]               ; Lost fanout        ;
-; Stack:inst14|stack[5][7]               ; Lost fanout        ;
-; Stack:inst14|stack[5][8]               ; Lost fanout        ;
-; Stack:inst14|stack[5][9]               ; Lost fanout        ;
-; Stack:inst14|stack[5][10]              ; Lost fanout        ;
-; Stack:inst14|stack[6][0]               ; Lost fanout        ;
-; Stack:inst14|stack[6][1]               ; Lost fanout        ;
-; Stack:inst14|stack[6][2]               ; Lost fanout        ;
-; Stack:inst14|stack[6][3]               ; Lost fanout        ;
-; Stack:inst14|stack[6][4]               ; Lost fanout        ;
-; Stack:inst14|stack[6][5]               ; Lost fanout        ;
-; Stack:inst14|stack[6][6]               ; Lost fanout        ;
-; Stack:inst14|stack[6][7]               ; Lost fanout        ;
-; Stack:inst14|stack[6][8]               ; Lost fanout        ;
-; Stack:inst14|stack[6][9]               ; Lost fanout        ;
-; Stack:inst14|stack[6][10]              ; Lost fanout        ;
-; Stack:inst14|stack[7][0]               ; Lost fanout        ;
-; Stack:inst14|stack[7][1]               ; Lost fanout        ;
-; Stack:inst14|stack[7][2]               ; Lost fanout        ;
-; Stack:inst14|stack[7][3]               ; Lost fanout        ;
-; Stack:inst14|stack[7][4]               ; Lost fanout        ;
-; Stack:inst14|stack[7][5]               ; Lost fanout        ;
-; Stack:inst14|stack[7][6]               ; Lost fanout        ;
-; Stack:inst14|stack[7][7]               ; Lost fanout        ;
-; Stack:inst14|stack[7][8]               ; Lost fanout        ;
-; Stack:inst14|stack[7][9]               ; Lost fanout        ;
-; Stack:inst14|stack[7][10]              ; Lost fanout        ;
 ; control_unit:inst3|pres_state.rst      ; Lost fanout        ;
 ; Total Number of Removed Registers = 89 ;                    ;
 +----------------------------------------+--------------------+
@@ -408,18 +408,18 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
+; 4:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |PUC1-24|prog_cnt:inst4|Mux4                                               ;
 ; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |PUC1-24|control_unit:inst3|alu_b_in_sel                                   ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |PUC1-24|control_unit:inst3|inp                                            ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |PUC1-24|reg_bank:inst10|Mux2                                              ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |PUC1-24|busmux:inst2|lpm_mux:$00000|mux_smc:auto_generated|result_node[3] ;
-; 12:1               ; 6 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |PUC1-24|alu_3:inst|Mux3                                                   ;
-; 256:1              ; 8 bits    ; 1360 LEs      ; 1360 LEs             ; 0 LEs                  ; No         ; |PUC1-24|ram_256x8:inst11|Mux0                                             ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |PUC1-24|reg_bank:inst10|Mux0                                              ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |PUC1-24|busmux:inst2|lpm_mux:$00000|mux_smc:auto_generated|result_node[7] ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; No         ; |PUC1-24|alu_3:inst|Mux6                                                   ;
+; 256:1              ; 8 bits    ; 1360 LEs      ; 1360 LEs             ; 0 LEs                  ; No         ; |PUC1-24|ram_256x8:inst11|Mux3                                             ;
 ; 1:1                ; 8 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |PUC1-24|alu_3:inst|Add1                                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------+
-; Source assignments for rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_j391:auto_generated ;
+; Source assignments for rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_lrb1:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                      ;
 +---------------------------------+--------------------+------+-----------------------------------------+
@@ -437,62 +437,62 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: rom_2k_16:inst7|altsyncram:altsyncram_component ;
-+------------------------------------+----------------------+----------------------------------+
-; Parameter Name                     ; Value                ; Type                             ;
-+------------------------------------+----------------------+----------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                          ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                       ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                     ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                     ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                   ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                          ;
-; OPERATION_MODE                     ; ROM                  ; Untyped                          ;
-; WIDTH_A                            ; 16                   ; Signed Integer                   ;
-; WIDTHAD_A                          ; 11                   ; Signed Integer                   ;
-; NUMWORDS_A                         ; 2048                 ; Signed Integer                   ;
-; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                          ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                          ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                          ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                          ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                          ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                          ;
-; WIDTH_B                            ; 1                    ; Untyped                          ;
-; WIDTHAD_B                          ; 1                    ; Untyped                          ;
-; NUMWORDS_B                         ; 1                    ; Untyped                          ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                          ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                          ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                          ;
-; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                          ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                          ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                          ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                          ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                          ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                          ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                          ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                          ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                          ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                   ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                          ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                          ;
-; BYTE_SIZE                          ; 8                    ; Untyped                          ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                          ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                          ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                          ;
-; INIT_FILE                          ; program-1.mif        ; Untyped                          ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                          ;
-; MAXIMUM_DEPTH                      ; 2048                 ; Signed Integer                   ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                          ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                          ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                          ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                          ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                          ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                          ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                          ;
-; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                          ;
-; CBXI_PARAMETER                     ; altsyncram_j391      ; Untyped                          ;
-+------------------------------------+----------------------+----------------------------------+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: rom_2k_16:inst7|altsyncram:altsyncram_component          ;
++------------------------------------+-------------------------------------------------+----------------+
+; Parameter Name                     ; Value                                           ; Type           ;
++------------------------------------+-------------------------------------------------+----------------+
+; BYTE_SIZE_BLOCK                    ; 8                                               ; Untyped        ;
+; AUTO_CARRY_CHAINS                  ; ON                                              ; AUTO_CARRY     ;
+; IGNORE_CARRY_BUFFERS               ; OFF                                             ; IGNORE_CARRY   ;
+; AUTO_CASCADE_CHAINS                ; ON                                              ; AUTO_CASCADE   ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                                             ; IGNORE_CASCADE ;
+; WIDTH_BYTEENA                      ; 1                                               ; Untyped        ;
+; OPERATION_MODE                     ; ROM                                             ; Untyped        ;
+; WIDTH_A                            ; 16                                              ; Signed Integer ;
+; WIDTHAD_A                          ; 11                                              ; Signed Integer ;
+; NUMWORDS_A                         ; 2048                                            ; Signed Integer ;
+; OUTDATA_REG_A                      ; CLOCK0                                          ; Untyped        ;
+; ADDRESS_ACLR_A                     ; NONE                                            ; Untyped        ;
+; OUTDATA_ACLR_A                     ; NONE                                            ; Untyped        ;
+; WRCONTROL_ACLR_A                   ; NONE                                            ; Untyped        ;
+; INDATA_ACLR_A                      ; NONE                                            ; Untyped        ;
+; BYTEENA_ACLR_A                     ; NONE                                            ; Untyped        ;
+; WIDTH_B                            ; 1                                               ; Untyped        ;
+; WIDTHAD_B                          ; 1                                               ; Untyped        ;
+; NUMWORDS_B                         ; 1                                               ; Untyped        ;
+; INDATA_REG_B                       ; CLOCK1                                          ; Untyped        ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                          ; Untyped        ;
+; RDCONTROL_REG_B                    ; CLOCK1                                          ; Untyped        ;
+; ADDRESS_REG_B                      ; CLOCK1                                          ; Untyped        ;
+; OUTDATA_REG_B                      ; UNREGISTERED                                    ; Untyped        ;
+; BYTEENA_REG_B                      ; CLOCK1                                          ; Untyped        ;
+; INDATA_ACLR_B                      ; NONE                                            ; Untyped        ;
+; WRCONTROL_ACLR_B                   ; NONE                                            ; Untyped        ;
+; ADDRESS_ACLR_B                     ; NONE                                            ; Untyped        ;
+; OUTDATA_ACLR_B                     ; NONE                                            ; Untyped        ;
+; RDCONTROL_ACLR_B                   ; NONE                                            ; Untyped        ;
+; BYTEENA_ACLR_B                     ; NONE                                            ; Untyped        ;
+; WIDTH_BYTEENA_A                    ; 1                                               ; Signed Integer ;
+; WIDTH_BYTEENA_B                    ; 1                                               ; Untyped        ;
+; RAM_BLOCK_TYPE                     ; AUTO                                            ; Untyped        ;
+; BYTE_SIZE                          ; 8                                               ; Untyped        ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                       ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                            ; Untyped        ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                            ; Untyped        ;
+; INIT_FILE                          ; ../../../../Documents/GitHub/VHDL_TP4/teste.mif ; Untyped        ;
+; INIT_FILE_LAYOUT                   ; PORT_A                                          ; Untyped        ;
+; MAXIMUM_DEPTH                      ; 2048                                            ; Signed Integer ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS                                          ; Untyped        ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                                          ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                                          ; Untyped        ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                          ; Untyped        ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                                 ; Untyped        ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                                 ; Untyped        ;
+; ENABLE_ECC                         ; FALSE                                           ; Untyped        ;
+; DEVICE_FAMILY                      ; Cyclone II                                      ; Untyped        ;
+; CBXI_PARAMETER                     ; altsyncram_lrb1                                 ; Untyped        ;
++------------------------------------+-------------------------------------------------+----------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -580,7 +580,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat Jul 06 15:54:01 2024
+    Info: Processing started: Sat Jul 06 18:19:39 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PUC1-24 -c PUC1-24
 Info: Found 1 design units, including 1 entities, in source file puc1-24.bdf
     Info: Found entity 1: PUC1-24
@@ -621,7 +621,7 @@ Info: Elaborated megafunction instantiation "rom_2k_16:inst7|altsyncram:altsyncr
 Info: Instantiated megafunction "rom_2k_16:inst7|altsyncram:altsyncram_component" with the following parameter:
     Info: Parameter "clock_enable_input_a" = "BYPASS"
     Info: Parameter "clock_enable_output_a" = "BYPASS"
-    Info: Parameter "init_file" = "program-1.mif"
+    Info: Parameter "init_file" = "../../../../Documents/GitHub/VHDL_TP4/teste.mif"
     Info: Parameter "intended_device_family" = "Cyclone II"
     Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info: Parameter "lpm_type" = "altsyncram"
@@ -633,9 +633,12 @@ Info: Instantiated megafunction "rom_2k_16:inst7|altsyncram:altsyncram_component
     Info: Parameter "widthad_a" = "11"
     Info: Parameter "width_a" = "16"
     Info: Parameter "width_byteena_a" = "1"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_j391.tdf
-    Info: Found entity 1: altsyncram_j391
-Info: Elaborating entity "altsyncram_j391" for hierarchy "rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_j391:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_lrb1.tdf
+    Info: Found entity 1: altsyncram_lrb1
+Info: Elaborating entity "altsyncram_lrb1" for hierarchy "rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_lrb1:auto_generated"
+Warning: 2 out of 2048 addresses are uninitialized. The Quartus II software will initialize them to "0". There are 2 warnings found, and 2 warnings are reported.
+    Warning: Memory Initialization File Address 5 is not initialized
+    Warning: Memory Initialization File Address 14 is not initialized
 Warning: Using design file prog_cnt.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: prog_cnt-arch1
     Info: Found entity 1: prog_cnt
@@ -727,25 +730,86 @@ Warning: TRI or OPNDRN buffers permanently enabled
     Warning: Node "sw~synth"
     Warning: Node "sw~synth"
 Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "stack_pop" is stuck at GND
     Warning (13410): Pin "v_flag_wr_ena" is stuck at GND
-Critical Warning: Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register port_io:inst12|dir_reg[0] will power up to Low
-    Critical Warning (18010): Register port_io:inst13|dir_reg[0] will power up to Low
-    Critical Warning (18010): Register port_io:inst12|dir_reg[1] will power up to Low
-    Critical Warning (18010): Register port_io:inst13|dir_reg[1] will power up to Low
-    Critical Warning (18010): Register port_io:inst12|dir_reg[7] will power up to Low
-    Critical Warning (18010): Register port_io:inst13|dir_reg[7] will power up to Low
-    Critical Warning (18010): Register port_io:inst12|dir_reg[6] will power up to Low
-    Critical Warning (18010): Register port_io:inst13|dir_reg[6] will power up to Low
-    Critical Warning (18010): Register port_io:inst12|dir_reg[5] will power up to Low
-    Critical Warning (18010): Register port_io:inst13|dir_reg[5] will power up to Low
-    Critical Warning (18010): Register port_io:inst12|dir_reg[4] will power up to Low
-    Critical Warning (18010): Register port_io:inst13|dir_reg[4] will power up to Low
-    Critical Warning (18010): Register port_io:inst12|dir_reg[3] will power up to Low
-    Critical Warning (18010): Register port_io:inst13|dir_reg[3] will power up to Low
-    Critical Warning (18010): Register port_io:inst12|dir_reg[2] will power up to Low
-    Critical Warning (18010): Register port_io:inst13|dir_reg[2] will power up to Low
 Info: 89 registers lost all their fanouts during netlist optimizations. The first 89 are displayed below.
+    Info: Register "Stack:inst14|stack[7][10]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[7][9]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[7][8]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[7][7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[7][6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[7][5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[7][4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[7][3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[7][2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[7][1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[7][0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[6][10]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[6][9]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[6][8]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[6][7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[6][6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[6][5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[6][4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[6][3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[6][2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[6][1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[6][0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[5][10]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[5][9]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[5][8]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[5][7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[5][6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[5][5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[5][4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[5][3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[5][2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[5][1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[5][0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[4][10]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[4][9]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[4][8]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[4][7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[4][6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[4][5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[4][4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[4][3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[4][2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[4][1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[4][0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[3][10]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[3][9]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[3][8]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[3][7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[3][6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[3][5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[3][4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[3][3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[3][2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[3][1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[3][0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[2][10]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[2][9]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[2][8]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[2][7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[2][6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[2][5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[2][4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[2][3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[2][2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[2][1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[2][0]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[1][10]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[1][9]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[1][8]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[1][7]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[1][6]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[1][5]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[1][4]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[1][3]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[1][2]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[1][1]" lost all its fanouts during netlist optimizations.
+    Info: Register "Stack:inst14|stack[1][0]" lost all its fanouts during netlist optimizations.
     Info: Register "Stack:inst14|stack[0][0]" lost all its fanouts during netlist optimizations.
     Info: Register "Stack:inst14|stack[0][1]" lost all its fanouts during netlist optimizations.
     Info: Register "Stack:inst14|stack[0][2]" lost all its fanouts during netlist optimizations.
@@ -757,94 +821,17 @@ Info: 89 registers lost all their fanouts during netlist optimizations. The firs
     Info: Register "Stack:inst14|stack[0][8]" lost all its fanouts during netlist optimizations.
     Info: Register "Stack:inst14|stack[0][9]" lost all its fanouts during netlist optimizations.
     Info: Register "Stack:inst14|stack[0][10]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[1][0]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[1][1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[1][2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[1][3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[1][4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[1][5]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[1][6]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[1][7]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[1][8]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[1][9]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[1][10]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[2][0]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[2][1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[2][2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[2][3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[2][4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[2][5]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[2][6]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[2][7]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[2][8]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[2][9]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[2][10]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[3][0]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[3][1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[3][2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[3][3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[3][4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[3][5]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[3][6]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[3][7]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[3][8]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[3][9]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[3][10]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[4][0]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[4][1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[4][2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[4][3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[4][4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[4][5]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[4][6]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[4][7]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[4][8]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[4][9]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[4][10]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[5][0]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[5][1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[5][2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[5][3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[5][4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[5][5]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[5][6]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[5][7]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[5][8]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[5][9]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[5][10]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[6][0]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[6][1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[6][2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[6][3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[6][4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[6][5]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[6][6]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[6][7]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[6][8]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[6][9]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[6][10]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[7][0]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[7][1]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[7][2]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[7][3]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[7][4]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[7][5]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[7][6]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[7][7]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[7][8]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[7][9]" lost all its fanouts during netlist optimizations.
-    Info: Register "Stack:inst14|stack[7][10]" lost all its fanouts during netlist optimizations.
     Info: Register "control_unit:inst3|pres_state.rst" lost all its fanouts during netlist optimizations.
-Info: Implemented 4195 device resources after synthesis - the final resource count might be different
+Info: Implemented 4235 device resources after synthesis - the final resource count might be different
     Info: Implemented 2 input pins
     Info: Implemented 43 output pins
     Info: Implemented 16 bidirectional pins
-    Info: Implemented 4118 logic cells
+    Info: Implemented 4158 logic cells
     Info: Implemented 16 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 79 warnings
-    Info: Peak virtual memory: 259 megabytes
-    Info: Processing ended: Sat Jul 06 15:54:10 2024
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:08
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 66 warnings
+    Info: Peak virtual memory: 262 megabytes
+    Info: Processing ended: Sat Jul 06 18:19:47 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:09
 
 
