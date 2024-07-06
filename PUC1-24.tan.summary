@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 17.966 ns
-From           : rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_0bg1:auto_generated|q_a[3]
-To             : dext[3]
+Actual Time    : 18.187 ns
+From           : rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_j391:auto_generated|q_a[6]
+To             : dext[4]
 From Clock     : clk_50
 To Clock       : --
 Failed Paths   : 0
@@ -15,9 +15,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clk_50'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 76.64 MHz ( period = 13.048 ns )
-From           : rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_0bg1:auto_generated|q_a[0]
-To             : ram_256x8:inst11|ram[82][4]
+Actual Time    : 74.99 MHz ( period = 13.336 ns )
+From           : rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_j391:auto_generated|q_a[5]
+To             : reg_bank:inst10|mem_reg[3][2]
 From Clock     : clk_50
 To Clock       : clk_50
 Failed Paths   : 0
@@ -26,8 +26,8 @@ Type           : Clock Hold: 'clk_50'
 Slack          : Not operational: Clock Skew > Data Delay
 Required Time  : None
 Actual Time    : N/A
-From           : port_io:inst13|port_reg[7]
-To             : port_io:inst13|port_io[7]$latch
+From           : port_io:inst13|port_reg[4]
+To             : port_io:inst13|port_io[4]$latch
 From Clock     : clk_50
 To Clock       : clk_50
 Failed Paths   : 15

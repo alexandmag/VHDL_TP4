@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PUC1-24
-Thu Jul 04 23:43:20 2024
+Sat Jul 06 15:54:10 2024
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -19,7 +19,7 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  11. Registers Removed During Synthesis
  12. General Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_gla1:auto_generated
+ 14. Source assignments for rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_j391:auto_generated
  15. Parameter Settings for User Entity Instance: BUSMUX:inst2
  16. Parameter Settings for User Entity Instance: rom_2k_16:inst7|altsyncram:altsyncram_component
  17. Parameter Settings for User Entity Instance: BUSMUX:inst1
@@ -53,7 +53,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +------------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jul 04 23:43:20 2024        ;
+; Analysis & Synthesis Status        ; Successful - Sat Jul 06 15:54:10 2024        ;
 ; Quartus II Version                 ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                      ; PUC1-24                                      ;
 ; Top-level Entity Name              ; PUC1-24                                      ;
@@ -155,34 +155,34 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 2      ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
-+-----------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+
-; File Name with User-Entered Path        ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                       ;
-+-----------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+
-; PUC1-24.bdf                             ; yes             ; User Block Diagram/Schematic File      ; C:/Users/User/Documents/GitHub/VHDL_TP4/PUC1-24.bdf                                ;
-; rom_2k_16.vhd                           ; yes             ; User Wizard-Generated File             ; C:/Users/User/Documents/GitHub/VHDL_TP4/rom_2k_16.vhd                              ;
-; control_unit.vhd                        ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/control_unit.vhd                           ;
-; reg_bank.vhd                            ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/reg_bank.vhd                               ;
-; alu_3.vhd                               ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/alu_3.vhd                                  ;
-; busmux.tdf                              ; yes             ; Megafunction                           ; c:/users/user/desktop/altera/91sp2/quartus/libraries/megafunctions/busmux.tdf      ;
-; lpm_mux.tdf                             ; yes             ; Megafunction                           ; c:/users/user/desktop/altera/91sp2/quartus/libraries/megafunctions/lpm_mux.tdf     ;
-; db/mux_smc.tdf                          ; yes             ; Auto-Generated Megafunction            ; C:/Users/User/Documents/GitHub/VHDL_TP4/db/mux_smc.tdf                             ;
-; altsyncram.tdf                          ; yes             ; Megafunction                           ; c:/users/user/desktop/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf  ;
-; db/altsyncram_gla1.tdf                  ; yes             ; Auto-Generated Megafunction            ; C:/Users/User/Documents/GitHub/VHDL_TP4/db/altsyncram_gla1.tdf                     ;
-; /users/user/downloads/program-1 (1).mif ; yes             ; Auto-Found Memory Initialization File  ; /users/user/downloads/program-1 (1).mif                                            ;
-; prog_cnt.vhd                            ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/prog_cnt.vhd                               ;
-; stack.vhd                               ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/stack.vhd                                  ;
-; ram_256x8.vhd                           ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/ram_256x8.vhd                              ;
-; port_io.vhd                             ; yes             ; Auto-Found VHDL File                   ; C:/Users/User/Documents/GitHub/VHDL_TP4/port_io.vhd                                ;
-; lpm_add_sub.tdf                         ; yes             ; Megafunction                           ; c:/users/user/desktop/altera/91sp2/quartus/libraries/megafunctions/lpm_add_sub.tdf ;
-; db/add_sub_rpi.tdf                      ; yes             ; Auto-Generated Megafunction            ; C:/Users/User/Documents/GitHub/VHDL_TP4/db/add_sub_rpi.tdf                         ;
-+-----------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                            ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                        ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+; PUC1-24.bdf                      ; yes             ; User Block Diagram/Schematic File      ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/PUC1-24.bdf            ;
+; rom_2k_16.vhd                    ; yes             ; User Wizard-Generated File             ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/rom_2k_16.vhd          ;
+; control_unit.vhd                 ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/control_unit.vhd       ;
+; reg_bank.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/reg_bank.vhd           ;
+; alu_3.vhd                        ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/alu_3.vhd              ;
+; busmux.tdf                       ; yes             ; Megafunction                           ; c:/users/alexa/onedrive/documentos/altera/altera/91sp2/quartus/libraries/megafunctions/busmux.tdf                   ;
+; lpm_mux.tdf                      ; yes             ; Megafunction                           ; c:/users/alexa/onedrive/documentos/altera/altera/91sp2/quartus/libraries/megafunctions/lpm_mux.tdf                  ;
+; db/mux_smc.tdf                   ; yes             ; Auto-Generated Megafunction            ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/db/mux_smc.tdf         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/users/alexa/onedrive/documentos/altera/altera/91sp2/quartus/libraries/megafunctions/altsyncram.tdf               ;
+; db/altsyncram_j391.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/db/altsyncram_j391.tdf ;
+; program-1.mif                    ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/program-1.mif          ;
+; prog_cnt.vhd                     ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/prog_cnt.vhd           ;
+; stack.vhd                        ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/stack.vhd              ;
+; ram_256x8.vhd                    ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/ram_256x8.vhd          ;
+; port_io.vhd                      ; yes             ; Auto-Found VHDL File                   ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/port_io.vhd            ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction                           ; c:/users/alexa/onedrive/documentos/altera/altera/91sp2/quartus/libraries/megafunctions/lpm_add_sub.tdf              ;
+; db/add_sub_rpi.tdf               ; yes             ; Auto-Generated Megafunction            ; C:/Users/alexa/OneDrive/Documentos/Puc Minas/Matérias/Sistemas Reconfiguráveis/TP 4/VHDL_TP4/db/add_sub_rpi.tdf     ;
++----------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -221,7 +221,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                     ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
 ; |PUC1-24                                  ; 1964 (27)         ; 2157 (0)     ; 32768       ; 0            ; 0       ; 0         ; 61   ; 0            ; |PUC1-24                                                                                ; work         ;
-;    |alu_3:inst|                           ; 96 (78)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|alu_3:inst                                                                     ;              ;
+;    |alu_3:inst|                           ; 96 (78)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|alu_3:inst                                                                     ; work         ;
 ;       |lpm_add_sub:Add0|                  ; 18 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|alu_3:inst|lpm_add_sub:Add0                                                    ;              ;
 ;          |add_sub_rpi:auto_generated|     ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|alu_3:inst|lpm_add_sub:Add0|add_sub_rpi:auto_generated                         ;              ;
 ;    |busmux:inst1|                         ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|busmux:inst1                                                                   ;              ;
@@ -238,18 +238,18 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |reg_bank:inst10|                      ; 59 (59)           ; 64 (64)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|reg_bank:inst10                                                                ; work         ;
 ;    |rom_2k_16:inst7|                      ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|rom_2k_16:inst7                                                                ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|rom_2k_16:inst7|altsyncram:altsyncram_component                                ; work         ;
-;          |altsyncram_gla1:auto_generated| ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_gla1:auto_generated ; work         ;
+;          |altsyncram_j391:auto_generated| ; 0 (0)             ; 0 (0)        ; 32768       ; 0            ; 0       ; 0         ; 0    ; 0            ; |PUC1-24|rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_j391:auto_generated ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                   ;
-+-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
-; Name                                                                                      ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                  ;
-+-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
-; rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_gla1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 2048         ; 16           ; --           ; --           ; 32768 ; ../../../Downloads/program-1 (1).mif ;
-+-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+--------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                            ;
++-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+---------------+
+; Name                                                                                      ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF           ;
++-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+---------------+
+; rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_j391:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 2048         ; 16           ; --           ; --           ; 32768 ; program-1.mif ;
++-------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+-------+---------------+
 
 
 Encoding Type:  One-Hot
@@ -419,7 +419,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +-------------------------------------------------------------------------------------------------------+
-; Source assignments for rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_gla1:auto_generated ;
+; Source assignments for rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_j391:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                      ;
 +---------------------------------+--------------------+------+-----------------------------------------+
@@ -439,60 +439,60 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +----------------------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: rom_2k_16:inst7|altsyncram:altsyncram_component ;
-+------------------------------------+--------------------------------------+------------------+
-; Parameter Name                     ; Value                                ; Type             ;
-+------------------------------------+--------------------------------------+------------------+
-; BYTE_SIZE_BLOCK                    ; 8                                    ; Untyped          ;
-; AUTO_CARRY_CHAINS                  ; ON                                   ; AUTO_CARRY       ;
-; IGNORE_CARRY_BUFFERS               ; OFF                                  ; IGNORE_CARRY     ;
-; AUTO_CASCADE_CHAINS                ; ON                                   ; AUTO_CASCADE     ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                                  ; IGNORE_CASCADE   ;
-; WIDTH_BYTEENA                      ; 1                                    ; Untyped          ;
-; OPERATION_MODE                     ; ROM                                  ; Untyped          ;
-; WIDTH_A                            ; 16                                   ; Signed Integer   ;
-; WIDTHAD_A                          ; 11                                   ; Signed Integer   ;
-; NUMWORDS_A                         ; 2048                                 ; Signed Integer   ;
-; OUTDATA_REG_A                      ; CLOCK0                               ; Untyped          ;
-; ADDRESS_ACLR_A                     ; NONE                                 ; Untyped          ;
-; OUTDATA_ACLR_A                     ; NONE                                 ; Untyped          ;
-; WRCONTROL_ACLR_A                   ; NONE                                 ; Untyped          ;
-; INDATA_ACLR_A                      ; NONE                                 ; Untyped          ;
-; BYTEENA_ACLR_A                     ; NONE                                 ; Untyped          ;
-; WIDTH_B                            ; 1                                    ; Untyped          ;
-; WIDTHAD_B                          ; 1                                    ; Untyped          ;
-; NUMWORDS_B                         ; 1                                    ; Untyped          ;
-; INDATA_REG_B                       ; CLOCK1                               ; Untyped          ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                               ; Untyped          ;
-; RDCONTROL_REG_B                    ; CLOCK1                               ; Untyped          ;
-; ADDRESS_REG_B                      ; CLOCK1                               ; Untyped          ;
-; OUTDATA_REG_B                      ; UNREGISTERED                         ; Untyped          ;
-; BYTEENA_REG_B                      ; CLOCK1                               ; Untyped          ;
-; INDATA_ACLR_B                      ; NONE                                 ; Untyped          ;
-; WRCONTROL_ACLR_B                   ; NONE                                 ; Untyped          ;
-; ADDRESS_ACLR_B                     ; NONE                                 ; Untyped          ;
-; OUTDATA_ACLR_B                     ; NONE                                 ; Untyped          ;
-; RDCONTROL_ACLR_B                   ; NONE                                 ; Untyped          ;
-; BYTEENA_ACLR_B                     ; NONE                                 ; Untyped          ;
-; WIDTH_BYTEENA_A                    ; 1                                    ; Signed Integer   ;
-; WIDTH_BYTEENA_B                    ; 1                                    ; Untyped          ;
-; RAM_BLOCK_TYPE                     ; AUTO                                 ; Untyped          ;
-; BYTE_SIZE                          ; 8                                    ; Untyped          ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                            ; Untyped          ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                 ; Untyped          ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                 ; Untyped          ;
-; INIT_FILE                          ; ../../../Downloads/program-1 (1).mif ; Untyped          ;
-; INIT_FILE_LAYOUT                   ; PORT_A                               ; Untyped          ;
-; MAXIMUM_DEPTH                      ; 2048                                 ; Signed Integer   ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS                               ; Untyped          ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                               ; Untyped          ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                               ; Untyped          ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                               ; Untyped          ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                      ; Untyped          ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                      ; Untyped          ;
-; ENABLE_ECC                         ; FALSE                                ; Untyped          ;
-; DEVICE_FAMILY                      ; Cyclone II                           ; Untyped          ;
-; CBXI_PARAMETER                     ; altsyncram_gla1                      ; Untyped          ;
-+------------------------------------+--------------------------------------+------------------+
++------------------------------------+----------------------+----------------------------------+
+; Parameter Name                     ; Value                ; Type                             ;
++------------------------------------+----------------------+----------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                          ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                       ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                     ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                     ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                   ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                          ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                          ;
+; WIDTH_A                            ; 16                   ; Signed Integer                   ;
+; WIDTHAD_A                          ; 11                   ; Signed Integer                   ;
+; NUMWORDS_A                         ; 2048                 ; Signed Integer                   ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                          ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                          ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                          ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                          ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                          ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                          ;
+; WIDTH_B                            ; 1                    ; Untyped                          ;
+; WIDTHAD_B                          ; 1                    ; Untyped                          ;
+; NUMWORDS_B                         ; 1                    ; Untyped                          ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                          ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                          ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                          ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                          ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                          ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                          ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                          ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                          ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                          ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                          ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                          ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                          ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                   ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                          ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                          ;
+; BYTE_SIZE                          ; 8                    ; Untyped                          ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                          ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                          ;
+; INIT_FILE                          ; program-1.mif        ; Untyped                          ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                          ;
+; MAXIMUM_DEPTH                      ; 2048                 ; Signed Integer                   ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                          ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                          ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                          ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                          ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                          ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                          ;
+; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                          ;
+; CBXI_PARAMETER                     ; altsyncram_j391      ; Untyped                          ;
++------------------------------------+----------------------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -580,7 +580,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Thu Jul 04 23:43:11 2024
+    Info: Processing started: Sat Jul 06 15:54:01 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PUC1-24 -c PUC1-24
 Info: Found 1 design units, including 1 entities, in source file puc1-24.bdf
     Info: Found entity 1: PUC1-24
@@ -621,7 +621,7 @@ Info: Elaborated megafunction instantiation "rom_2k_16:inst7|altsyncram:altsyncr
 Info: Instantiated megafunction "rom_2k_16:inst7|altsyncram:altsyncram_component" with the following parameter:
     Info: Parameter "clock_enable_input_a" = "BYPASS"
     Info: Parameter "clock_enable_output_a" = "BYPASS"
-    Info: Parameter "init_file" = "../../../Downloads/program-1 (1).mif"
+    Info: Parameter "init_file" = "program-1.mif"
     Info: Parameter "intended_device_family" = "Cyclone II"
     Info: Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info: Parameter "lpm_type" = "altsyncram"
@@ -633,25 +633,9 @@ Info: Instantiated megafunction "rom_2k_16:inst7|altsyncram:altsyncram_component
     Info: Parameter "widthad_a" = "11"
     Info: Parameter "width_a" = "16"
     Info: Parameter "width_byteena_a" = "1"
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[0]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[1]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[2]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[3]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[4]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[5]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[6]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[7]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[8]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[9]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[10]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[11]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[12]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[13]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[14]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Warning: Assertion warning: MGL_INTERNAL_WARNING: ( The parameter value is not one of the pre-specified values in the value list.) altsyncram|stratix_ram_block inst ram_block1a[15]|INIT_FILE The value assigned is ../../../Downloads/program-1 (1).mif and the valid value list is UNUSED|../../../Downloads/program-1 (1).mif
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_gla1.tdf
-    Info: Found entity 1: altsyncram_gla1
-Info: Elaborating entity "altsyncram_gla1" for hierarchy "rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_gla1:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_j391.tdf
+    Info: Found entity 1: altsyncram_j391
+Info: Elaborating entity "altsyncram_j391" for hierarchy "rom_2k_16:inst7|altsyncram:altsyncram_component|altsyncram_j391:auto_generated"
 Warning: Using design file prog_cnt.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: prog_cnt-arch1
     Info: Found entity 1: prog_cnt
@@ -744,6 +728,23 @@ Warning: TRI or OPNDRN buffers permanently enabled
     Warning: Node "sw~synth"
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "v_flag_wr_ena" is stuck at GND
+Critical Warning: Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register port_io:inst12|dir_reg[0] will power up to Low
+    Critical Warning (18010): Register port_io:inst13|dir_reg[0] will power up to Low
+    Critical Warning (18010): Register port_io:inst12|dir_reg[1] will power up to Low
+    Critical Warning (18010): Register port_io:inst13|dir_reg[1] will power up to Low
+    Critical Warning (18010): Register port_io:inst12|dir_reg[7] will power up to Low
+    Critical Warning (18010): Register port_io:inst13|dir_reg[7] will power up to Low
+    Critical Warning (18010): Register port_io:inst12|dir_reg[6] will power up to Low
+    Critical Warning (18010): Register port_io:inst13|dir_reg[6] will power up to Low
+    Critical Warning (18010): Register port_io:inst12|dir_reg[5] will power up to Low
+    Critical Warning (18010): Register port_io:inst13|dir_reg[5] will power up to Low
+    Critical Warning (18010): Register port_io:inst12|dir_reg[4] will power up to Low
+    Critical Warning (18010): Register port_io:inst13|dir_reg[4] will power up to Low
+    Critical Warning (18010): Register port_io:inst12|dir_reg[3] will power up to Low
+    Critical Warning (18010): Register port_io:inst13|dir_reg[3] will power up to Low
+    Critical Warning (18010): Register port_io:inst12|dir_reg[2] will power up to Low
+    Critical Warning (18010): Register port_io:inst13|dir_reg[2] will power up to Low
 Info: 89 registers lost all their fanouts during netlist optimizations. The first 89 are displayed below.
     Info: Register "Stack:inst14|stack[0][0]" lost all its fanouts during netlist optimizations.
     Info: Register "Stack:inst14|stack[0][1]" lost all its fanouts during netlist optimizations.
@@ -840,10 +841,10 @@ Info: Implemented 4195 device resources after synthesis - the final resource cou
     Info: Implemented 16 bidirectional pins
     Info: Implemented 4118 logic cells
     Info: Implemented 16 RAM segments
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 78 warnings
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 79 warnings
     Info: Peak virtual memory: 259 megabytes
-    Info: Processing ended: Thu Jul 04 23:43:20 2024
+    Info: Processing ended: Sat Jul 06 15:54:10 2024
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Total CPU time (on all processors): 00:00:08
 
 

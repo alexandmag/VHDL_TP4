@@ -24,7 +24,7 @@ end entity port_io;
 -- Arquitetura do comportamento do bloco port_io
 architecture behavior of port_io is
     -- Declaração de sinais internos para os registradores dir_reg e port_reg, e o latch
-    signal dir_reg  : std_logic_vector(7 downto 0) := (others => '0');  -- Registrador de direção
+	signal dir_reg : std_logic_vector(7 downto 0) := "11111111";  -- Registrador de direção
     signal port_reg : std_logic_vector(7 downto 0) := (others => '0');  -- Registrador de dados de saída
     signal latch    : std_logic_vector(7 downto 0);                      -- Registrador de dados de entrada
 begin
